@@ -7,11 +7,16 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+        <script src="assets/js/jquery.min.js"></script>
+        <script>
+        $(function(){
+          $("#loaded-header").load("header.html");
+        });
+        </script>
 	</head>
 	<body class="right-sidebar">
 		<div id="page-wrapper">
-
-			<?php include('header.html'); ?>
+			<div id="loaded-header"></div>
 
 			<!-- Main -->
 				<div id="main-wrapper">
@@ -45,7 +50,7 @@
 
 													<!-- Excerpt -->
 														<article class="box excerpt">
-															<header><!-- 
+															<header><!--
 																<span class="date">July 30</span> -->
 																<h5>[Useful] Links</h5>
 															</header>
