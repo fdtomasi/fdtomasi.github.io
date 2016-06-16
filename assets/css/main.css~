@@ -770,7 +770,7 @@
 		/* Basic */
 
 			body, input, textarea, select {
-				line-height: 1.65em;
+				line-height: 1.25em;
 				font-size: 13pt;
 			}
 
