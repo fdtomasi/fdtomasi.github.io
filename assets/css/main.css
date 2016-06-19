@@ -745,6 +745,7 @@ button,
 
 /* Copyright */
 #copyright {
+    font-size: 12px;
 	border-top: solid 2px #e5e5e5;
 	text-align: center;
 	margin-top: 0em;
@@ -1354,7 +1355,7 @@ button,
 	#sidebar {
 		/*border-top: solid 2px #e5e5e5;*/
 		box-shadow: inset 0px 8px 0px 0px #fff, inset 0px 10px 0px 0px #e5e5e5;
-		margin-top: 4em !important;
+		/*margin-top: 4em;*/
 		padding-top: 4em !important;
 	}
 		#sidebar > section, #sidebar > article {
