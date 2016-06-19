@@ -8,20 +8,22 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
     <script src="assets/js/jquery.min.js"></script>
-    <!-- <script src="assets/js/jquery.dropotron.min.js"></script>
-    <script src="assets/js/skel.min.js"></script>
-    <script src="assets/js/skel-viewport.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script> -->
-    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script>
-    $(function(){$("#loaded-header").load("header.html");});
+    $(function(){$("#loaded-header").load("header.html",
+            function() {console.log("");});});
     $(function(){$("#loaded-footer").load("footer.html");});
     </script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/skel-viewport.min.js"></script>
+    <!-- <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script> -->
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 </head>
 <body class="right-sidebar">
 <div id="page-wrapper">
 <div id="loaded-header"></div>
+
 	<div id="main-wrapper">
 		<div id="main" class="container">
 			<div class="row">
