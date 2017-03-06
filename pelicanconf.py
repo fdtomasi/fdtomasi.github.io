@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = u'Federico Tomasi'
 SITENAME = u"Federico's Blog"
 SITEURL = ''
+SITESUBTITLE = "[Personal Web Page]"
 
 PATH = 'content'
 
@@ -26,8 +27,20 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('facebook', 'https://www.facebook.com/fede.tomatoma'),
+          ('twitter', 'https://twitter.com/kslw_'),
+          ('instagram', 'https://www.instagram.com/klsw_/'),
+          ('google-plus', 'https://plus.google.com/u/1/108368396270480629290'),
+          ('youtube', 'https://www.youtube.com/channel/UCcRYAdfZQ_jj-Q9yirpbbbQ'),
+          ('github', 'https://github.com/fdtomasi'),
+          )
+# SHOW_SOCIAL_ON_INDEX_PAGE_HEADER = 1
+#<li><a class="icon fa-facebook" href="https://www.facebook.com/fede.tomatoma"></a></li>
+#<li><a class="icon fa-twitter" href="https://twitter.com/kslw_"></a></li>
+#<li><a class="icon fa-instagram" href="https://www.instagram.com/klsw_/"></a></li>
+#<li><a class="icon fa-google-plus" href="https://plus.google.com/u/1/108368396270480629290"></a></li>
+#<li><a class="icon fa-youtube" href="https://www.youtube.com/channel/UCcRYAdfZQ_jj-Q9yirpbbbQ"></a></li>
+#<li><a class="icon fa-github" href="https://github.com/fdtomasi"></a></li>
 
 DEFAULT_PAGINATION = 10
 
@@ -38,3 +51,18 @@ MARKUP = ('md', 'ipynb')
 
 PLUGIN_PATH = './plugins'
 PLUGINS = ['ipynb.markup']
+
+THEME = "/home/fede/pelican-themes/pelican-clean-blog"
+CSS_OVERRIDE = 'theme/css/ft-main.css'
+#GITHUB_URL = 'http://github.com/fdtomasi'
+
+MENUITEMS = (
+#    ("HOME", '/'),
+    ("BIO", '/pages/bio.html'),
+    ("TALKS", '/pages/talks.html'),
+    ("SOFTWARE", '/pages/software.html'),
+    ("RESEARCH", '/pages/research.html'),
+    ("LINKS", '/pages/links.html'),
+)
+DISPLAY_PAGES_ON_MENU = 0  # avoid duplicates
+# SHOW_FULL_ARTICLE = True
