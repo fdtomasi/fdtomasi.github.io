@@ -49,11 +49,13 @@ DEFAULT_PAGINATION = 10
 
 MARKUP = ('md', 'ipynb')
 
-PLUGIN_PATH = './plugins'
+PLUGIN_PATHS = ['./plugins']
 PLUGINS = ['ipynb.markup']
 
 THEME = "/home/fede/pelican-themes/pelican-clean-blog"
-CSS_OVERRIDE = 'theme/css/ft-main.css'
+# CSS_OVERRIDE = 'theme/css/ft-main.css'
+CSS_OVERRIDE = 'other/ft-main.css'
+FOOTER_INCLUDE = 'ft-footer.html'
 #GITHUB_URL = 'http://github.com/fdtomasi'
 
 MENUITEMS = (
