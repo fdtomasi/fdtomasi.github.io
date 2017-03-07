@@ -22,7 +22,7 @@ a {
 		transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
 	}
 
-	a:hover {
+	a:hover, .post-preview>a:focus, .post-preview>a:hover {
 		color: #ed786a;
 		border-bottom-color: rgba(255, 255, 255, 0);
 	}
