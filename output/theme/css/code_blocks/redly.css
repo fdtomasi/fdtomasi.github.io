@@ -27,7 +27,13 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+    font-family: 'Lora', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+}
+.navbar,
+.intro-header .page-heading .subheading
+{
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+
 }
 p {
     line-height: 1.5;
@@ -565,8 +571,8 @@ strong, b {
 	color: #ed786a;
     /*color: #fff;*/
 	font-family: 'Lora';
-    font-weight: 600;
-    font-size: 1.5em !important;
+    font-weight: 500;
+    font-size: 2.5em !important;
     margin-bottom: 0em;
     letter-spacing: .5em;
     text-transform: uppercase;
