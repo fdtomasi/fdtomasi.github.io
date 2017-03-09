@@ -53,9 +53,9 @@ PLUGIN_PATHS = ['./plugins']
 PLUGINS = ['ipynb.markup']
 
 THEME = "/home/fede/pelican-themes/pelican-clean-blog"
-COLOR_SCHEME_CSS = 'redly.css'
+#COLOR_SCHEME_CSS = 'redly.css'
 # CSS_OVERRIDE = 'theme/css/ft-main.css'
-#CSS_OVERRIDE = 'other/ft-main.css'
+CSS_OVERRIDE = 'other/redly.css'
 FOOTER_INCLUDE = 'ft-footer.html'
 #GITHUB_URL = 'http://github.com/fdtomasi'
 
