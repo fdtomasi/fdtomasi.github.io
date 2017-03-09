@@ -1,0 +1,6 @@
+[submodule "plugins/ipynb"]
+	path = plugins/ipynb
+	url = git://github.com/danielfrg/pelican-ipynb.git
+[submodule "plugins/pelican-btex"]
+	path = plugins/pelican-btex
+	url = https://github.com/toni-heittola/pelican-btex.git
