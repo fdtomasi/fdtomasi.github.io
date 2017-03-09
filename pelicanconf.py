@@ -50,7 +50,7 @@ DEFAULT_PAGINATION = 10
 MARKUP = ('md', 'ipynb')
 
 PLUGIN_PATHS = ['./plugins']
-PLUGINS = ['ipynb.markup']
+PLUGINS = ['ipynb.markup', 'pelican-btex']
 
 THEME = "/home/fede/pelican-themes/pelican-clean-blog"
 #COLOR_SCHEME_CSS = 'redly.css'
@@ -67,7 +67,7 @@ MENUITEMS = (
     ("BIO", '/pages/bio.html'),
     ("TALKS", '/pages/talks.html'),
     ("SOFTWARE", '/pages/software.html'),
-    ("RESEARCH", '/pages/research.html'),
+    ("PUBLICATIONS", '/pages/publications.html'),
     ("LINKS", '/pages/links.html'),
 )
 DISPLAY_PAGES_ON_MENU = 0  # avoid duplicates
