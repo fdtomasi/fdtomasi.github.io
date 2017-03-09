@@ -10,7 +10,7 @@ SITESUBTITLE = "[Personal Web Page]"
 PATH = 'content'
 
 TIMEZONE = 'Europe/Rome'
-
+LOCALE = ('gb', 'en_GB', 'usa', 'en_US', 'en_GB.utf8')
 DEFAULT_LANG = u'en'
 
 # Feed generation is usually not desired when developing
