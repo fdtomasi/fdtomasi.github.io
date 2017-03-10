@@ -907,16 +907,18 @@ strong, b {
 	.list-inline > li {
 	    padding: 0;
 	}
+
+    .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+        background-color: none;
+    }
+    .navbar-default .navbar-toggle {
+        border-color: none;
+    }
+
+    .navbar-default {
+        background-color: rgba(248,248,248,0.98);
+    }
 }
 
 
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-    background-color: none;
-}
-.navbar-default .navbar-toggle {
-    border-color: none;
-}
 
-.navbar-default {
-    background-color: rgba(248,248,248,0.98);
-}
