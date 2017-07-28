@@ -10,6 +10,8 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
+PLUGINS += [u"disqus_static"]
+
 SITEURL = 'https://fdtomasi.github.io/'
 RELATIVE_URLS = False
 
@@ -20,5 +22,9 @@ CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 
 # Following items are often useful when publishing
 
-#DISQUS_SITENAME = ""
-#GOOGLE_ANALYTICS = ""
+GOOGLE_ANALYTICS = "UA-103577232-1"
+
+# Comments
+DISQUS_SITENAME = u'fdtomasi-github'
+DISQUS_SECRET_KEY = u'QDlllWEMOHgNzIqrRA5eapjJuCC7hSRTQgWtMwAEldZrZVJB6IEbfR8op71FkoCV'
+DISQUS_PUBLIC_KEY = u'jc4IXSNdyLiB7i5BGpKHdBH1Itk0tHSuFZGdSTPUnqsUeFrxNzg0vNUap4mI4Qzm'

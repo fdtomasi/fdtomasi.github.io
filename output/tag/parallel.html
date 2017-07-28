@@ -9,18 +9,17 @@
 
         <title>Federico Tomasi - Tag parallel</title>
 
-            <link href="https://fdtomasi.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Federico Tomasi Full Atom Feed" />
         <!-- Bootstrap Core CSS -->
-        <link href="https://fdtomasi.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="https://fdtomasi.github.io/theme/css/clean-blog.min.css" rel="stylesheet">
+        <link href="/theme/css/clean-blog.min.css" rel="stylesheet">
 
         <!-- Code highlight color scheme -->
-            <link href="https://fdtomasi.github.io/theme/css/code_blocks/darkly.css" rel="stylesheet">
+            <link href="/theme/css/code_blocks/darkly.css" rel="stylesheet">
 
             <!-- CSS specified by the user -->
-            <link href="https://fdtomasi.github.io/other/redly.css" rel="stylesheet">
+            <link href="/other/redly.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -44,8 +43,9 @@
             <meta name="twitter:site" content="@kslw_">
             <meta name="twitter:title" content="Federico Tomasi">
             <meta name="twitter:description" content="[Personal Web Page]">
-                <meta name="twitter:image" content="https://fdtomasi.github.io/theme/images/post-bg.jpg">
+                <meta name="twitter:image" content="/theme/images/post-bg.jpg">
     
+	<link rel="stylesheet" href="/theme/css/magnific-popup.css">
 </head>
 
 <body>
@@ -61,7 +61,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="https://fdtomasi.github.io/">Federico Tomasi</a>
+                <a class="navbar-brand" href="/">Federico Tomasi</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -73,7 +73,7 @@
                         <li><a href="/pages/publications.html">PUBLICATIONS</a></li>
                         <li><a href="/pages/links.html">LINKS</a></li>
 
-                                <li><a href="https://fdtomasi.github.io/category/posts.html">posts</a></li>
+                                <li><a href="/category/posts.html">posts</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -81,7 +81,7 @@
         <!-- /.container -->
     </nav>
 
-        <header class="intro-header" style="background-image: url('https://fdtomasi.github.io/theme/images/home-bg.jpg')">
+        <header class="intro-header" style="background-image: url('/theme/images/home-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -98,7 +98,9 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="post-preview">
-            <a href="https://fdtomasi.github.io/cineca-25-school.html" rel="bookmark" title="Permalink to 25th School of Parallel Computing at CINECA">
+<a href="/cineca-25-school.html"><img src="/photos/cineca/about-bgt.jpg"
+	style="display: inline; float: right; margin: 2px 0 2ex 4ex;" /></a>
+            <a href="/cineca-25-school.html" rel="bookmark" title="Permalink to 25th School of Parallel Computing at CINECA">
                 <h2 class="post-title">
                     25th School of Parallel Computing at CINECA
                 </h2>
@@ -107,7 +109,7 @@
                     25th School of Parallel Computing Starting the 25th school of parallel computing at CINECA supercomputing centre in Bologna, Italy! Two...
                 </p>
             <p class="post-meta">Posted by
-                    <a href="https://fdtomasi.github.io/author/federico-tomasi.html">Federico Tomasi</a>
+                    <a href="/author/federico-tomasi.html">Federico Tomasi</a>
                  on Fri 10 June 2016
             </p>
         </div>
@@ -185,17 +187,67 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="https://fdtomasi.github.io/theme/js/jquery.min.js"></script>
+    <script src="/theme/js/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="https://fdtomasi.github.io/theme/js/bootstrap.min.js"></script>
+    <script src="/theme/js/bootstrap.min.js"></script>
 
         <!-- Custom Theme JavaScript -->
-        <script src="https://fdtomasi.github.io/theme/js/clean-blog.min.js"></script>
+        <script src="/theme/js/clean-blog.min.js"></script>
 
     
 
-    
+
+
+
+<!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<!-- Magnific Popup core JS file -->
+<script src="/theme/js/jquery.magnific-popup.js"></script>
+<script>
+$('.gallery').magnificPopup({
+	delegate: 'a',
+	type: 'image',
+	gallery: {
+		enabled: true,
+		navigateByImgClick: true,
+		preload: [1,2]
+	},
+	image: {
+		titleSrc: function(item) {
+			if (item.el.attr('caption') && item.el.attr('exif')) {
+				return (item.el.attr('caption').replace(/\\n/g, '<br />') +
+					'<small>' + item.el.attr('title') + ' - ' + item.el.attr('exif') + '</small>');
+			}
+		return item.el.attr('title') + '<small>' + item.el.attr('exif') + '</small>';
+	} }
+});
+
+$(document).ready(function() {
+	$('.popup-gallery').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		tLoading: 'Loading image #%curr%...',
+		mainClass: 'mfp-img-mobile',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+		},
+		image: {
+			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+			titleSrc: function(item) {
+				return item.el.attr('title') + '<small>by Federico Tomasi</small>';
+			}
+		}
+	});
+});
+</script>
+
+
+
 </body>
 
 </html>
