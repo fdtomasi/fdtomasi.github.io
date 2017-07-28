@@ -67,6 +67,7 @@
 
             <meta name="twitter:description" content="25th School of Parallel Computing Starting the 25th school of parallel computing at CINECA supercomputing centre in Bologna, Italy! Two...">
     
+	<link rel="stylesheet" href="https://fdtomasi.github.io/theme/css/magnific-popup.css">
 </head>
 
 <body>
@@ -126,9 +127,49 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     <!-- Post Content -->
     <article>
-        <p><a href="http://www.hpc.cineca.it/content/25th-summer-school-parallel-computing">25th School of Parallel Computing</a>
+<img src="https://fdtomasi.github.io/photos/cineca/about-bga.jpg" />
+     <p><a href="http://www.hpc.cineca.it/content/25th-summer-school-parallel-computing">25th School of Parallel Computing</a>
 Starting the 25th school of parallel computing at CINECA supercomputing centre in Bologna, Italy! Two weeks of <em>crazy</em> parallelisation.</p>
     </article>
+    
+
+<!-- <div class="gallery"> -->
+<div class="popup-gallery">
+			<h1>title here</h1>
+						<a href="https://fdtomasi.github.io/photos/cineca/about-bg.jpg" title="about-bg.jpg" exif="" caption="My best photo ever! How lucky of me!"><img src="https://fdtomasi.github.io/photos/cineca/about-bgt.jpg"></a>
+						<a href="https://fdtomasi.github.io/photos/cineca/contact-bg.jpg" title="contact-bg.jpg" exif="" caption="Twilight over the dam."><img src="https://fdtomasi.github.io/photos/cineca/contact-bgt.jpg"></a>
+</div>
+
+
+
+    <h1>title here</h1>
+    <div id="carousel-1" class="carousel slide">
+      <ol class="carousel-indicators">
+          <li data-target="#carousel-1" data-slide-to="0"  class="active" ></li>
+          <li data-target="#carousel-2" data-slide-to="1" ></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+            <div class="item active">
+          <img src="https://fdtomasi.github.io/photos/cineca/about-bg.jpg" exif="" alt="My best photo ever! How lucky of me!">
+          <div class="carousel-caption">
+              <h5>My best photo ever! How lucky of me!</h5>
+          </div> <!-- carousel-caption -->
+        </div> <!-- item -->
+            <div class="item">
+          <img src="https://fdtomasi.github.io/photos/cineca/contact-bg.jpg" exif="" alt="Twilight over the dam.">
+          <div class="carousel-caption">
+              <h5>Twilight over the dam.</h5>
+          </div> <!-- carousel-caption -->
+        </div> <!-- item -->
+      </div> <!-- carousel-inner -->
+      <a class="left carousel-control" href="#carousel-1" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-1" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div> <!-- closes carousel-1 -->
+
 
         <div class="tags">
             <p>tags: <a href="https://fdtomasi.github.io/tag/parallel.html">parallel</a>, <a href="https://fdtomasi.github.io/tag/programming.html">programming</a></p>
@@ -136,6 +177,22 @@ Starting the 25th school of parallel computing at CINECA supercomputing centre i
 
     <hr>
 
+        <div class="comments">
+            <h2>Comments</h2>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                var disqus_shortname = 'fdtomasi-github';
+                var disqus_identifier = 'cineca-25-school.html';
+                var disqus_url = 'https://fdtomasi.github.io/cineca-25-school.html';
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//fdtomasi-github.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    
             </div>
         </div>
     </div>
@@ -217,9 +274,78 @@ Starting the 25th school of parallel computing at CINECA supercomputing centre i
         <!-- Custom Theme JavaScript -->
         <script src="https://fdtomasi.github.io/theme/js/clean-blog.min.js"></script>
 
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-103577232-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'fdtomasi-github';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
     
 
-    
+
+
+
+<!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<!-- Magnific Popup core JS file -->
+<script src="https://fdtomasi.github.io/theme/js/jquery.magnific-popup.js"></script>
+<script>
+$('.gallery').magnificPopup({
+	delegate: 'a',
+	type: 'image',
+	gallery: {
+		enabled: true,
+		navigateByImgClick: true,
+		preload: [1,2]
+	},
+	image: {
+		titleSrc: function(item) {
+			if (item.el.attr('caption') && item.el.attr('exif')) {
+				return (item.el.attr('caption').replace(/\\n/g, '<br />') +
+					'<small>' + item.el.attr('title') + ' - ' + item.el.attr('exif') + '</small>');
+			}
+		return item.el.attr('title') + '<small>' + item.el.attr('exif') + '</small>';
+	} }
+});
+
+$(document).ready(function() {
+	$('.popup-gallery').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		tLoading: 'Loading image #%curr%...',
+		mainClass: 'mfp-img-mobile',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+		},
+		image: {
+			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+			titleSrc: function(item) {
+				return item.el.attr('title') + '<small>by Federico Tomasi</small>';
+			}
+		}
+	});
+});
+</script>
+
+
+
 </body>
 
 </html>
