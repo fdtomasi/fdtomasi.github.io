@@ -80,3 +80,13 @@ MENUITEMS = (
 )
 DISPLAY_PAGES_ON_MENU = 0  # avoid duplicates
 # SHOW_FULL_ARTICLE = True
+
+STATIC_PATHS = [
+    'images', 
+    'extra/robots.txt', 
+    'extra/favicon.ico'
+]
+EXTRA_PATH_METADATA = {
+    'extra/robots.txt': {'path': 'robots.txt'},
+    'extra/favicon.ico': {'path': 'favicon.ico'}
+}
