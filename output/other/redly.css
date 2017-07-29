@@ -14,7 +14,7 @@ body {
     font-family: 'Open Sans', Lora, 'Times New Roman', serif;
     font-size: 18px;
     font-weight: 500;
-    color: #404040;
+    color: #000;
     webkit-tap-highlight-color: #ed786a;
 }
 .intro-header .page-heading .subheading,
@@ -369,10 +369,14 @@ form .row:first-child .floating-label-form-group {
 }
 .pager li>a,
 .pager li>span {
-    font-size: 14px;
+    /* font-size: 14px; */
     padding: 15px 25px;
     background-color: #fff;
-    border-radius: 0
+    border-radius: 0;
+    color: #ccc;
+    font: bold italic 45px/1.5 Helvetica, Verdana, sans-serif;
+    margin-right: 1em;
+    /* display: block; */
 }
 .pager li>a:focus,
 .pager li>a:hover {
@@ -396,7 +400,7 @@ form .row:first-child .floating-label-form-group {
 ::selection {
     color: #fff;
     text-shadow: none;
-    background: #ed786a
+    background: #ed786a;
 }
 img {
     max-width: 100%;
@@ -564,7 +568,7 @@ a {
 strong, b {
 	font-weight: 600;
 	color: #666;
-}   
+}
 
 .intro-header .page-heading h1 {
 	color: #ed786a;
@@ -919,6 +923,3 @@ strong, b {
         background-color: rgba(248,248,248,0.98);
     }
 }
-
-
-
