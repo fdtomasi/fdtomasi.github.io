@@ -370,11 +370,11 @@ form .row:first-child .floating-label-form-group {
 .pager li>a,
 .pager li>span {
     /* font-size: 14px; */
-    padding: 15px 25px;
+    /*padding: 15px 25px;*/
     background-color: #fff;
     border-radius: 0;
     color: #ccc;
-    font: bold italic 45px/1.5 Helvetica, Verdana, sans-serif;
+    font: bold italic 1em/1.5 Helvetica, Verdana, sans-serif;
     margin-right: 1em;
     /* display: block; */
 }
@@ -922,4 +922,18 @@ strong, b {
     .navbar-default {
         background-color: rgba(248,248,248,0.98);
     }
+}
+
+#talks li {
+    display: block;
+    text-align: left;
+}
+#talks span {
+    border: none;
+    padding-bottom: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+}
+#talks a {
+  padding: 0 25px;
 }
