@@ -31,9 +31,10 @@ People were not expecting this.
 Good is that I'm not really a coffee addicted.
 
 ### 2pm.
-First one of the afternoon session was [Margherita Francescatto](https://www.linkedin.com/in/margherita-francescatto-a01997100/?ppe=1), in the line of data integration methods.
+First one of the afternoon session was [Margherita Francescatto](https://www.linkedin.com/in/margherita-francescatto-a01997100/?ppe=1), in the line of data integration methods. OK, admission #1: I forgot to take a pen and a notebook. Again.
+Come on, I don't care, I will remember everything, this is so interesting! [*blank*]
 
-After the data integration talks, the other were about microbiome diversity on materials. At this point I admit to have lost a bit of interest. It was late, I had no more coffee in my body (but maybe a bit of green tea) and I just wanted to visit the city.
+After the data integration talks, the other were about microbiome diversity on materials. At this point I admit (admission  #2) to have lost a bit of interest. It was late, I had no more coffee in my body (but maybe a bit of green tea) and I just wanted to visit the city.
 
 ### 6pm.
 The end of the day. Now, the interesting part of the conference: photos of the city! The sun was still high, so I had a couple of hours to visit the main POIs. As for the other days, clouds were forecast! So I could not miss any chance.
