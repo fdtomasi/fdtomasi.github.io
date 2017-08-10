@@ -1,0 +1,7 @@
+Title: RMA normalisation
+Slug: rma-normalisation
+Date: 2017-08-10 16:00
+Category: posts
+Tags: python, rma, normalisation, bioinformatics
+Author: Federico Tomasi
+Summary: Normalisation for biological data is a fundamental step in data analysis. Here I did a notebook to explain the steps of the most common data preprocessing pipeline, namely using RMA normalisation.

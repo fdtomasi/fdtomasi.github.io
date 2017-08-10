@@ -1,5 +1,5 @@
 Title: ISMB/ECCB 2017 conference, Day 2
-Slug: ismb-eccb-2017-day-1
+Slug: ismb-eccb-2017-day-2
 Date: 2017-07-23 23:15
 Category: posts
 Tags: conference, life sciences, bioinformatics

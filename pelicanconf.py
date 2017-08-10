@@ -60,6 +60,8 @@ import photos; reload(photos)
 
 PLUGINS = ['ipynb.markup', 'pelican-btex', photos]
 
+# IPYNB_IGNORE_CSS=True
+
 THEME = "/home/fede/pelican-themes/pelican-clean-blog"
 #COLOR_SCHEME_CSS = 'redly.css'
 # CSS_OVERRIDE = 'theme/css/ft-main.css'
@@ -74,16 +76,17 @@ MENUITEMS = (
 #    ("HOME", '/'),
     ("BIO", '/pages/bio.html'),
     ("TALKS", '/pages/talks.html'),
-    ("SOFTWARE", '/pages/software.html'),
+    ("RESEARCH", '/pages/research.html'),
     ("PUBLICATIONS", '/pages/publications.html'),
+    ("SOFTWARE", '/pages/software.html'),
     ("LINKS", '/pages/links.html'),
 )
 DISPLAY_PAGES_ON_MENU = 0  # avoid duplicates
 # SHOW_FULL_ARTICLE = True
 
 STATIC_PATHS = [
-    'images', 
-    'extra/robots.txt', 
+    'images',
+    'extra/robots.txt',
     'extra/favicon.ico'
 ]
 EXTRA_PATH_METADATA = {
