@@ -97,3 +97,5 @@ EXTRA_PATH_METADATA = {
 ERT_WPM = 200  # words per minute by default
 ERT_FORMAT = '{time} read'
 MULTI_NEIGHBORS = 5
+CC_LICENSE = "CC-BY-NC-SA"
+BR_AFTER_IMG = True
