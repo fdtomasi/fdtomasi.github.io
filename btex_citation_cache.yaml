@@ -1,6 +1,11 @@
-- last_update: '2017-07-26 22:40:50'
+- last_update: '2017-08-10 12:45:12'
   scholar:
     total_citations: 0
   title: 'palladio: a parallel framework for robust variable selection in high-dimensional
     data'
   year: 2016
+- last_update: '2017-08-10 12:46:10'
+  scholar:
+    total_citations: 0
+  title: knowledge driven graph evolution (kdge) [version 1; not peer reviewed]
+  year: 2017
