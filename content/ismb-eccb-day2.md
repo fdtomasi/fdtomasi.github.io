@@ -4,6 +4,7 @@ Date: 2017-07-23 23:15
 Category: posts
 Tags: conference, life sciences, bioinformatics
 Author: Federico Tomasi
+gallery: {photo}praga-2307{Prague, day two}
 
 ## 10am, Sunday.
 Organising a conference during a weekend is terrible. One loses his sense of time (and space?). It's Sunday, nonetheless I feel like it's only Tuesday, with the difference that I did not have time to rest this week. At least there is coffee, right?

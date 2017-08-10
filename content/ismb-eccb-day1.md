@@ -4,6 +4,7 @@ Date: 2017-07-22 23:15
 Category: posts
 Tags: conference, life sciences, bioinformatics
 Author: Federico Tomasi
+gallery: {photo}praga-2207{Prague, day one}
 
 Here we are! This year I got the chance to be at the ISMB/ECCB conference, and, *wow*, this conference is HUGE. There are a lot of great speakers, a lot of great tracks! Unfortunately, I would need a [Time-Turner](https://en.wikipedia.org/wiki/Magical_objects_in_Harry_Potter#Time-Turners) to attend them all.
 

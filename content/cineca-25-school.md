@@ -9,3 +9,4 @@ image: {photo}cineca/about-bg.jpg
 
 [25th School of Parallel Computing](http://www.hpc.cineca.it/content/25th-summer-school-parallel-computing)
 Starting the 25th school of parallel computing at CINECA supercomputing centre in Bologna, Italy! Two weeks of *crazy* parallelisation.
+

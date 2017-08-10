@@ -46,6 +46,7 @@
             <meta name="twitter:description" content="[Personal Web Page]">
                 <meta name="twitter:image" content="https://fdtomasi.github.io/theme/images/post-bg.jpg">
     
+	<link rel="stylesheet" href="https://fdtomasi.github.io/theme/css/magnific-popup.css">
 </head>
 
 <body>
@@ -232,6 +233,51 @@
 
 
 
+<!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<!-- Magnific Popup core JS file -->
+<script src="https://fdtomasi.github.io/theme/js/jquery.magnific-popup.js"></script>
+<script>
+$('.gallery').magnificPopup({
+	delegate: 'a',
+	type: 'image',
+	gallery: {
+		enabled: true,
+		navigateByImgClick: true,
+		preload: [1,2]
+	},
+	image: {
+		titleSrc: function(item) {
+			if (item.el.attr('caption') && item.el.attr('exif')) {
+				return (item.el.attr('caption').replace(/\\n/g, '<br />') +
+					'<small>' + item.el.attr('title') + ' - ' + item.el.attr('exif') + '</small>');
+			}
+		return item.el.attr('title') + '<small>' + item.el.attr('exif') + '</small>';
+	} }
+});
+
+$(document).ready(function() {
+	$('.popup-gallery').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		tLoading: 'Loading image #%curr%...',
+		mainClass: 'mfp-img-mobile',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+		},
+		image: {
+			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+			titleSrc: function(item) {
+				return item.el.attr('title') + '<small>by Federico Tomasi</small>';
+			}
+		}
+	});
+});
+</script>
 
 
 
