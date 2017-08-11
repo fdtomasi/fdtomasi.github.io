@@ -46,7 +46,6 @@
             <meta name="twitter:description" content="[Personal Web Page]">
                 <meta name="twitter:image" content="https://fdtomasi.github.io/theme/images/post-bg.jpg">
     
-	<link rel="stylesheet" href="https://fdtomasi.github.io/theme/css/magnific-popup.css">
 </head>
 
 <body>
@@ -99,6 +98,20 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-preview">
+            <a href="https://fdtomasi.github.io/ismb-eccb-2017-day-3.html" rel="bookmark" title="Permalink to ISMB/ECCB 2017 conference, Day 3">
+                <h2 class="post-title">
+                    ISMB/ECCB 2017 conference, Day 3
+                </h2>
+            </a>
+                <p class="article-summary">
+                    Another day, another round of fresh and exciting ideas. Today it was a bit difficult to follow each talk (remember I did not have a...
+                </p>
+            <p class="post-meta">Posted by
+                    <a href="https://fdtomasi.github.io/author/federico-tomasi.html">Federico Tomasi</a>
+                 on Mon 24 July 2017
+            </p>
+<p>There are <a data-disqus-identifier="ismb-eccb-2017-day-3.html" href="https://fdtomasi.github.io/ismb-eccb-2017-day-3.html#disqus_thread">comments</a>.</p>        </div>
         <div class="post-preview">
             <a href="https://fdtomasi.github.io/ismb-eccb-2017-day-2.html" rel="bookmark" title="Permalink to ISMB/ECCB 2017 conference, Day 2">
                 <h2 class="post-title">
@@ -237,51 +250,6 @@
 
 
 
-<!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
-<!-- Magnific Popup core JS file -->
-<script src="https://fdtomasi.github.io/theme/js/jquery.magnific-popup.js"></script>
-<script>
-$('.gallery').magnificPopup({
-	delegate: 'a',
-	type: 'image',
-	gallery: {
-		enabled: true,
-		navigateByImgClick: true,
-		preload: [1,2]
-	},
-	image: {
-		titleSrc: function(item) {
-			if (item.el.attr('caption') && item.el.attr('exif')) {
-				return (item.el.attr('caption').replace(/\\n/g, '<br />') +
-					'<small>' + item.el.attr('title') + ' - ' + item.el.attr('exif') + '</small>');
-			}
-		return item.el.attr('title') + '<small>' + item.el.attr('exif') + '</small>';
-	} }
-});
-
-$(document).ready(function() {
-	$('.popup-gallery').magnificPopup({
-		delegate: 'a',
-		type: 'image',
-		tLoading: 'Loading image #%curr%...',
-		mainClass: 'mfp-img-mobile',
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-		},
-		image: {
-			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-			titleSrc: function(item) {
-				return item.el.attr('title') + '<small>by Federico Tomasi</small>';
-			}
-		}
-	});
-});
-</script>
 
 
 
