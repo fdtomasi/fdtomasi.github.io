@@ -97,6 +97,9 @@ stopserver:
 	$(BASEDIR)/develop_server.sh stop
 	@echo 'Stopped Pelican and SimpleHTTPServer processes running in background.'
 
+preview:
+	$(PELICAN) $(INPUTDIR) && cd $(OUTPUTDIR) && $(PY) -m pelican.server && cd ..
+
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 

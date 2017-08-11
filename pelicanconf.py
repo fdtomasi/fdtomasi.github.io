@@ -58,7 +58,7 @@ import sys
 sys.path.append("/home/fede/src/pelican-plugins")
 import photos; reload(photos)
 
-PLUGINS = ['ipynb.markup', 'pelican-btex', 'jinja2content', 'pelican-ert', 'neighbors', photos]
+PLUGINS = ['ipynb.markup', 'pelican-btex', 'jinja2content', 'pelican-ert', 'neighbors', "render_math", photos]
 
 # IPYNB_IGNORE_CSS=True
 
@@ -94,7 +94,7 @@ EXTRA_PATH_METADATA = {
     'extra/favicon.ico': {'path': 'favicon.ico'}
 }
 
-ERT_WPM = 200  # words per minute by default
+ERT_WPM = 180  # words per minute by default
 ERT_FORMAT = '{time} read'
 MULTI_NEIGHBORS = 5
 CC_LICENSE = "CC-BY-NC-SA"
