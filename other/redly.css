@@ -937,3 +937,7 @@ strong, b {
 #talks a {
   padding: 0 25px;
 }
+
+.article-summary {
+   margin: 1em 0;
+}
