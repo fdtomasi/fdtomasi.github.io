@@ -35,7 +35,7 @@ SOCIAL = (
     ('google-plus', 'https://plus.google.com/u/1/108368396270480629290'),
     ('youtube', 'https://www.youtube.com/channel/UCcRYAdfZQ_jj-Q9yirpbbbQ'),
     ('github', 'https://github.com/fdtomasi'),
-          )
+)
 # SHOW_SOCIAL_ON_INDEX_PAGE_HEADER = 1
 # <li><a class="icon fa-facebook" href="https://www.facebook.com/fede.tomatoma"></a></li>
 # <li><a class="icon fa-twitter" href="https://twitter.com/kslw_"></a></li>
@@ -52,16 +52,16 @@ DEFAULT_PAGINATION = 10
 MARKUP = ('md', 'ipynb')
 
 
-PLUGIN_PATHS = ['./plugins']
+PLUGIN_PATHS = ['./plugins', './pelican-plugins']
 
 # Other plugins:
 # photos
-import sys
-sys.path.append("/home/fede/src/pelican-plugins")
-import photos
+# import sys
+# sys.path.append("/home/fede/src/pelican-plugins")
+# import photos
 
 PLUGINS = ['ipynb.markup', 'pelican-btex', 'jinja2content', 'pelican-ert',
-           'neighbors', "render_math", photos]
+           'neighbors', "render_math", 'photos']
 
 # IPYNB_IGNORE_CSS=True
 
@@ -108,3 +108,5 @@ ERT_FORMAT = '{time} read'
 MULTI_NEIGHBORS = 5
 CC_LICENSE = "CC-BY-NC-SA"
 BR_AFTER_IMG = True
+
+PHOTO_LIBRARY = "content/photos"
