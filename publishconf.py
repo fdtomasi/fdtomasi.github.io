@@ -20,6 +20,9 @@ CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 
 #DELETE_OUTPUT_DIRECTORY = True
 
+# activate fetch in publishing
+BTEX_SCHOLAR_ACTIVE = True
+
 # Following items are often useful when publishing
 
 GOOGLE_ANALYTICS = "UA-103577232-1"
