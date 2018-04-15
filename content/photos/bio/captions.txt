@@ -1,3 +1,4 @@
 # carousel_sitran_at_night.jpg: SITraN department, Sheffield, UK.
 sitran.jpg: SITraN department, Sheffield, UK.
 genova.jpg: Genova, Italy.
+manchester.jpg: Outside of Smith Building, Manchester, UK.

@@ -1,4 +1,4 @@
-- last_update: '2018-03-16 13:48:54'
+- last_update: '2018-04-15 15:16:13'
   scholar:
     citation_list_url: http://scholar.google.com/scholar?cites=1636271556685209926&as_sdt=2005&sciodt=0,5&hl=en
     cluster_id: '1636271556685209926'
@@ -32,7 +32,7 @@
   title: uncovering alzheimer's snp signature with a multi-view machine learning analysis
     based on snps, genes and pathways
   year: 2017
-- last_update: '2018-03-16 13:51:21'
+- last_update: '2018-04-15 15:18:39'
   scholar:
     pdf_url: http://mlsb.cc/2017/abstracts/MLSB_2017_paper_25.pdf
   title: knowledge driven graph evolution (kdge)
@@ -42,7 +42,7 @@
     total_citations: 0
   title: 'icing: large-scale kernel-based inference of immunoglobulin clonotypes'
   year: 2017
-- last_update: '2018-03-16 13:52:34'
+- last_update: '2018-04-15 15:19:38'
   scholar: {}
   title: latent variable time-varying network inference
   year: 2018
@@ -126,6 +126,27 @@
     based on snps, genes and pathways
   year: 2017
 - last_update: '2018-03-17 16:38:25'
+  scholar:
+    total_citations: 0
+  title: 'icing: large-scale kernel-based inference of immunoglobulin clonotypes'
+  year: 2017
+- last_update: '2018-04-15 15:16:49'
+  scholar:
+    total_citations: 0
+  title: 'adenine: a hpc-oriented tool for biological data exploration'
+  year: 2017
+- last_update: '2018-04-15 15:17:25'
+  scholar:
+    total_citations: 0
+  title: 'icing: large scale inference of immunoglobulin clonotypes'
+  year: 2017
+- last_update: '2018-04-15 15:18:21'
+  scholar:
+    total_citations: 0
+  title: uncovering alzheimer's snp signature with a multi-view machine learning analysis
+    based on snps, genes and pathways
+  year: 2017
+- last_update: '2018-04-15 15:19:05'
   scholar:
     total_citations: 0
   title: 'icing: large-scale kernel-based inference of immunoglobulin clonotypes'
