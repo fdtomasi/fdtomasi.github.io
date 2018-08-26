@@ -1102,8 +1102,7 @@ h6:hover .anchor-link {
 
 .ansi-bold { font-weight: bold; }
 </style>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1111,8 +1110,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1120,8 +1118,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1129,8 +1126,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1142,8 +1138,7 @@ Only for microarrays there are several preprocessing techniques (RMA, GCRMA, MAS
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1151,8 +1146,7 @@ Only for microarrays there are several preprocessing techniques (RMA, GCRMA, MAS
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1214,8 +1208,7 @@ Loading chip 20 of 20
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1241,8 +1234,7 @@ The output matrix would be produced putting each GeneChips as a different column
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -3276,14 +3268,13 @@ Pl0PAN0jaZP+k5LeCNw6Qo4sTy2OLE8tjiyP2zJ8jixPLY4sTy2OTI8xxhhjjOmYrpeAHQKcIel6
 4Cngxoi4aNQcWZ5aHFmeWhxZHrdl+BxZnlocWZ5aHJkeY4wxxhjTLZ0PABljjDHGGGOMMcaYwdJ1
 DiBjjDHGGGOMMcYYM2A8AGSMMcYYY4wxxhhTOR4AMsYYY4wxxhhjjKkcDwAZY4wxxhhjjDHGVI4H
 gIwxxhhjjDHGGGMq5/8AtI8z93lrC7oAAAAASUVORK5CYII=
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -3292,8 +3283,7 @@ gIwxxhhjjDHGGGMq5/8AtI8z93lrC7oAAAAASUVORK5CYII=
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -3301,8 +3291,7 @@ gIwxxhhjjDHGGGMq5/8AtI8z93lrC7oAAAAASUVORK5CYII=
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -3315,9 +3304,11 @@ RMA is composed by a series of steps to be performed to clean out noise from the
 </ul>
 <p><i>Background correction</i> is the first step that has to be performed on the input intensities, to remove all the intensities which are not part of the real signal. This step is fundamental because unprocessed intensities are never zero, due to the techniques used to colour the microarray chip, even if the intensity extracted is not part of the signal, but it is only noise of the background.</p>
 <p>The observed PM intensities for any probe on an array is assumed to be composed by a signal and a noise component, so that the observed intensity $Y$ is given by</p>
-$$Y = S+N$$<p>as the sum of signal $S$ and noise $N$. It is assumed that $S$ follows an exponential distibution with parameter $\alpha$, while $N$ is distributed normally (truncated at 0 to avoid negatives) with mean $\mu$ and variance $\sigma^2$.
+<p>$$Y = S+N$$</p>
+<p>as the sum of signal $S$ and noise $N$. It is assumed that $S$ follows an exponential distibution with parameter $\alpha$, while $N$ is distributed normally (truncated at 0 to avoid negatives) with mean $\mu$ and variance $\sigma^2$.
 The background-corrected value it is then calculated as</p>
-$$E(s|Y=y)=a+b\frac{\phi(\frac{a}{b}) - \phi(\frac{y-a}{b})}{\Phi(\frac{a}{b}) + \Phi(\frac{y-a}{b}) - 1}$$<p>where $a = y-\mu -\sigma^2\alpha$ and $b=\sigma$. In practice the second term on the numerator and on the denominator are 0 and 1, respectively, so the formula is simplified.</p>
+<p>$$E(s|Y=y)=a+b\frac{\phi(\frac{a}{b}) - \phi(\frac{y-a}{b})}{\Phi(\frac{a}{b}) + \Phi(\frac{y-a}{b}) - 1}$$</p>
+<p>where $a = y-\mu -\sigma^2\alpha$ and $b=\sigma$. In practice the second term on the numerator and on the denominator are 0 and 1, respectively, so the formula is simplified.</p>
 <p>In the code, all RMA correction signal steps are put into the <code>rma.py</code> file, that is imported in the main file of the analysis. The following is the main background correction function, that has to be called to perform the background correction.</p>
 </div>
 </div>
@@ -3361,8 +3352,7 @@ $$E(s|Y=y)=a+b\frac{\phi(\frac{a}{b}) - \phi(\frac{y-a}{b})}{\Phi(\frac{a}{b}) +
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -3672,19 +3662,19 @@ nqbuTtkk17st7ye++/RtIB+4xHEeab5/A1ONMbOIT0p/cTb90rfWrjLGPAXsuJfhZS7zpEgpXz/h
 JZv8BXjIGPMW8d9z/+c2TlJ9Qnwv5DvEL936geM8SWGMORT4K/E//MPGmIuAE4Ap9d8vAzLy8tdG
 PtsPiR/GOIL4cfj3jDEzrLW77UDNDS4iIpLmXO8GFxERkQRU1iIiImlOZS0iIpLmVNYiIiJpTmUt
 IiKS5lTWIiIiaU5lLSIikuZU1iIiImnu/wGxEvQkBhTE0AAAAABJRU5ErkJggg==
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Instead, signal distribution parameter $\alpha$ is estimated taking the right part of PM data. The formula used is the maximum likelihood for the rate parameter, that is:</p>
-$$\alpha=\frac{1}{\hat{x}}$$<p>where $\hat{x}$ is calculated as the <i>max density</i> of the PM intensities higher than the PMmax intensity (so that the fit line on the intensities higher than the median value produce a negative exponential, intrpreted as the signal of which the parameter $\alpha$ is estimated).</p>
+<p>$$\alpha=\frac{1}{\hat{x}}$$</p>
+<p>where $\hat{x}$ is calculated as the <i>max density</i> of the PM intensities higher than the PMmax intensity (so that the fit line on the intensities higher than the median value produce a negative exponential, intrpreted as the signal of which the parameter $\alpha$ is estimated).</p>
 <p>The results can be shown running all the background-correction code over the PM matrix and plotting the results.</p>
 </div>
 </div>
@@ -5035,14 +5025,13 @@ HLE8VXHE8qgsQgghhBCiFCR5nu96qyFhZjXCcKwGZMCv3f2SsjlieariiOVRWRafI5anKo5Ynqo4
 YnlUFiGEEEIIUQaiBniEEEIIIYQQQgghxPBZsE6WhRBCCCGEEEIIIcRwUIBHCCGEEEIIIYQQouQo
 wCOEEEIIIYQQQghRchTgEUIIIYQQQgghhCg5CvAIIYQQQgghhBBClJz/D/wGZPZMXeB9AAAAAElF
 TkSuQmCC
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -5051,8 +5040,7 @@ TkSuQmCC
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -5060,13 +5048,13 @@ TkSuQmCC
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The next step in RMA data pre-processing is a normalisation step. Data are background-corrected, but now they should be put in a way to be really comparable: in RMA normalisation is done by <i>quantile normalisation</i>; the goal of quantile normalisation is to give the same distribution of intensities to each array. An intensity is transformed in quantile normalisation with the following formula:</p>
-$$x^*_{ij} = F^{-1}(G_j(x_{ij}))$$<p>where $x_{ij}$ is measurement $i$ on array $j$, $G_j$ is the distribution function for array $j$ and $F^{-1}$ is the inverse of the distribution function to be normalised to; the normalised intensity thus is given by $x^*_{ij}$.</p>
+<p>$$x^*_{ij} = F^{-1}(G_j(x_{ij}))$$</p>
+<p>where $x_{ij}$ is measurement $i$ on array $j$, $G_j$ is the distribution function for array $j$ and $F^{-1}$ is the inverse of the distribution function to be normalised to; the normalised intensity thus is given by $x^*_{ij}$.</p>
 <p>As described in Bolstad et al. (2003), quantile normalisation is obtained in practice with the following steps:</p>
 <ol>
 <li>Given $n$ arrays (GeneChips) of length $p$, form $X$ of dimension $p\times n$ where each array is a column;</li>
@@ -5100,8 +5088,7 @@ $$x^*_{ij} = F^{-1}(G_j(x_{ij}))$$<p>where $x_{ij}$ is measurement $i$ on array 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -6077,14 +6064,13 @@ ZHlqcWR5anFkeRxL9xxZnlocWZ6sWIwxxhhjzJCYMjIyMvujkpA0jbIUrYBngOsi4oI+empxZHlq
 cWR5anFkeRxL9xxZnlocWZ6sWIwxxhhjzHDoVCWQMcYYY4wxxhhjjJkcujQnkDHGGGOMMcYYY4yZ
 JFwJZIwxxhhjjDHGGPMiwJVAxhhjjDHGGGOMMS8CXAlkjDHGGGOMMcYY8yLAlUDGGGOMMcYYY4wx
 LwL+H7/t9CdyhzB1AAAAAElFTkSuQmCC
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -6375,8 +6361,8 @@ vMrMZhV3NLMTgccHUG7M7LzlxszOW27MbOXGz85bbszsvOXGzm6aw9GfAH5hZouBvxHadRCwO3Ds
 AMqNmZ233JjZecuNma3c+Nl5y42Znbfc2NnN8wAHMxtMuOTbgK3AQ+5+50DLjZmdt9yY2XnLjZmt
 3PjZecuNmZ233NjZTVOERUREBppmOScsIiIy4KgIi4iIZERFWEREJCMqwiIiIhlRERYREcnI/wfx
 462Uxio/ogAAAABJRU5ErkJggg==
-">
-</img></div>
+"/>
+</div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
@@ -6388,8 +6374,7 @@ AMqNmZ233JjZecuNma3c+Nl5y42Znbfc2NnN8wAHMxtMuOTbgK3AQ+5+50DLjZmdt9yY2XnLjZmt
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -6397,8 +6382,7 @@ AMqNmZ233JjZecuNma3c+Nl5y42Znbfc2NnN8wAHMxtMuOTbgK3AQ+5+50DLjZmdt9yY2XnLjZmt
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -6406,14 +6390,14 @@ AMqNmZ233JjZecuNma3c+Nl5y42Znbfc2NnN8wAHMxtMuOTbgK3AQ+5+50DLjZmdt9yY2XnLjZmt
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Last step in the pipeline of biological data pre-processing with RMA technique is the summarisation. This step is needed because of the microarray geometry: each row is a probe, but in each microarray multiple probes are measuring the same portion of RNA (in order to obtain reliable measurements) so at this time the aim is to average rows (probes) which measured the same RNA pieces.</p>
 <p>RMA expression measure is actually based upon fitting the model</p>
-$$y_{kij} = \beta_{kj}+\alpha_{ki}+\epsilon_{kij}$$<p>where the indices $k$, $j$ and $i$ refer to probe set, chip and probe, respectively; $y_{kij}$ is the response term ($log_2$ transformed, background-corrected and normalised PM intensity), $\beta_{kj}$ and $\alpha_{ki}$ are the chip effect and probe effect, and $\epsilon_{kij}$ is the error term. From this model it can be seen how at this point from a probes-chips matrix it should be obtain a <i>probe sets</i>-chips matrix, in order to put together probes which measure the same RNA pieces.</p>
+<p>$$y_{kij} = \beta_{kj}+\alpha_{ki}+\epsilon_{kij}$$</p>
+<p>where the indices $k$, $j$ and $i$ refer to probe set, chip and probe, respectively; $y_{kij}$ is the response term ($log_2$ transformed, background-corrected and normalised PM intensity), $\beta_{kj}$ and $\alpha_{ki}$ are the chip effect and probe effect, and $\epsilon_{kij}$ is the error term. From this model it can be seen how at this point from a probes-chips matrix it should be obtain a <i>probe sets</i>-chips matrix, in order to put together probes which measure the same RNA pieces.</p>
 <p>Actually this step is left to the reader, as it does not involve signal manipulation and normalisation. In order to perform this last step it would be required the geometry of the GeneChips used, namely HG-133A; then rows which correspond to the same probe set must be averaged in order to produce a single intensity value for each probe set. In this way a final reliable matrix with the corrected intensities is produced.</p>
 <p>Then, as the last step of the pipeline of RMA, has to be implemented for RMA another function to finalise the output matrix: that is the <i>median polish</i>.</p>
 <p>With this function it is built a residuals matrix removed from the probe set matrix obtained, which completes the pipeline of RMA.</p>
@@ -6454,8 +6438,7 @@ $$y_{kij} = \beta_{kj}+\alpha_{ki}+\epsilon_{kij}$$<p>where the indices $k$, $j$
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -6741,14 +6724,13 @@ t9zI7NxyI7Nzy43Mzi03Mju33NDsVhwifi/wXTO7C/hj8ZjPAY4EXjxGs3PLjczOLTcyO7fcyOzc
 ciOzc8uNzM4tNzS7JRf7N7PxpCHPBvQCd7v7LWM5O7fcyOzcciOzc8uNzM4tNzI7t9zI7NxyI7P1
 azoiIiIBWj7ISURE5PFABVZERCSACqyIiEgAFVgREZEAKrAiIiIB/j+JF66AdZ9C7wAAAABJRU5E
 rkJggg==
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -6756,8 +6738,7 @@ rkJggg==
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -6765,8 +6746,7 @@ rkJggg==
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12754,14 +12734,13 @@ F6N8BKyMvAr0LgoZeQ3IR2CeZOSCKFYWFhYWFoTjOB4wZGKu6L7AmmhhYWFhYbGocQXlIzBPMtIq
 VhYWFhYWFhYWFhYWFnNELlQFtLCwsLCwsLCwsLCwWNSwipWFhYWFhYWFhYWFhcUcYRUrCwsLCwsL
 CwsLCwuLOcIqVhYWFhYWFhYWFhYWFnOEVawsLCwsLCwsLCwsLCzmCKtYWVhYWFhYWFhYWFhYzBH/
 F6OYqB8zXEmtAAAAAElFTkSuQmCC
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12769,7 +12748,9 @@ F6OYqB8zXEmtAAAAAElFTkSuQmCC
 <p>Another important plots which are designed in microarray normalisation analysis are the so-called <i>MA-plots</i>.
 A MA-plot is a visual representation of two channel DNA microarray gene expression data which has been transformed onto the $M$ (log ratios) and $A$ (mean average) scale.
 $M$ and $A$ are defined by the following equations:</p>
-$$M = log_2(R) - log_2(G)$$$$A = \frac{1}{2}(log_2(R)+log_2(G))$$<p>where $R$ (Red) and $G$ (Green) are the two channel of the microarray to be compared. In a single-channel microarray there is not such intensities difference: thus MA-plot in RMA single-channel microarray analysis are built from intensities of a single GeneChip in contrast to a pseudo-median reference GeneChip, built from the median of each rows (for this reason it is a pseudo-median: this chip does not exists as a single column, but is build from the median of each row).</p>
+<p>$$M = log_2(R) - log_2(G)$$
+$$A = \frac{1}{2}(log_2(R)+log_2(G))$$</p>
+<p>where $R$ (Red) and $G$ (Green) are the two channel of the microarray to be compared. In a single-channel microarray there is not such intensities difference: thus MA-plot in RMA single-channel microarray analysis are built from intensities of a single GeneChip in contrast to a pseudo-median reference GeneChip, built from the median of each rows (for this reason it is a pseudo-median: this chip does not exists as a single column, but is build from the median of each row).</p>
 </div>
 </div>
 </div>
@@ -14619,8 +14600,8 @@ CsI6kNRQQdg+fBr4X12P/SXwg5Zl7S/BeARBEARhKyDzoyCsA0kNFQRBEARBEARBKDMkIigIgiAI
 giAIglBmiBAUBEEQBEEQBEEoM0QICoIgCIIgCIIglBkiBAVBEARBEARBEMoMEYKCIAiCIAiCIAhl
 hghBQRAEQRAEQRCEMkOEoCAIgiAIgiAIQpkhQlAQBEEQBEEQBKHM+P8B6zB2CS9/f0cAAAAASUVO
 RK5CYII=
-">
-</img></div>
+"/>
+</div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
@@ -16364,14 +16345,13 @@ NM0/LlrHCCGEkCLC8ZGQ3LiK3QFCiGPOAfiRaZpnZYNhGOcAnEc6SJ0QQgjZi3B8JCQHdOkkpHz4
 VQD/s2XbnwP4lGEYR4rQH0IIIaQU4PhISA7o0kkIIYQQQgghFQotfIQQQgghhBBSoVDwEUIIIYQQ
 QkiFQsFHCCGEEEIIIRUKBR8hhBBCCCGEVCgUfIQQQgghhBBSoVDwEUIIIYQQQkiFQsFHCCGEEEII
 IRUKBR8hhBBCCCGEVCj/P109gK9eky80AAAAAElFTkSuQmCC
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16379,8 +16359,7 @@ IRUKBR8hhBBCCCGEVCj/P109gK9eky80AAAAAElFTkSuQmCC
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
