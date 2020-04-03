@@ -9,19 +9,17 @@
 
         <title>RMA normalisation</title>
 
-            <link href="https://fdtomasi.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Federico Tomasi Full Atom Feed" />
-            <link href="https://fdtomasi.github.io/feeds/posts.atom.xml" type="application/atom+xml" rel="alternate" title="Federico Tomasi Categories Atom Feed" />
         <!-- Bootstrap Core CSS -->
-        <link href="https://fdtomasi.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="https://fdtomasi.github.io/theme/css/clean-blog.min.css" rel="stylesheet">
+        <link href="/theme/css/clean-blog.min.css" rel="stylesheet">
 
         <!-- Code highlight color scheme -->
-            <link href="https://fdtomasi.github.io/theme/css/code_blocks/darkly.css" rel="stylesheet">
+            <link href="/theme/css/code_blocks/darkly.css" rel="stylesheet">
 
             <!-- CSS specified by the user -->
-            <link href="https://fdtomasi.github.io/extra/redly.css" rel="stylesheet">
+            <link href="/extra/redly.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -54,18 +52,18 @@
 		<meta property="og:site_name" content="Federico Tomasi">
 
 	<meta property="og:type" content="article">
-            <meta property="article:author" content="https://fdtomasi.github.io/author/federico-tomasi.html">
-	<meta property="og:url" content="https://fdtomasi.github.io/rma-normalisation.html">
+            <meta property="article:author" content="/author/federico-tomasi.html">
+	<meta property="og:url" content="/rma-normalisation.html">
 	<meta property="og:title" content="RMA normalisation">
 	<meta property="article:published_time" content="2017-08-10 16:00:00+02:00">
             <meta property="og:description" content="Normalisation for biological data is a fundamental step in data analysis. This is a notebook for the most common data preprocessing methods.">
 
-            <meta property="og:image" content="https://fdtomasi.github.io/theme/images/post-bg.jpg">
+            <meta property="og:image" content="/theme/images/post-bg.jpg">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@kslw_">
         <meta name="twitter:title" content="RMA normalisation">
 
-            <meta name="twitter:image" content="https://fdtomasi.github.io/theme/images/post-bg.jpg">
+            <meta name="twitter:image" content="/theme/images/post-bg.jpg">
 
             <meta name="twitter:description" content="Normalisation for biological data is a fundamental step in data analysis. This is a notebook for the most common data preprocessing methods.">
     
@@ -84,7 +82,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="https://fdtomasi.github.io/">Federico Tomasi</a>
+                <a class="navbar-brand" href="/">Federico Tomasi</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -93,11 +91,8 @@
                         <li><a href="/pages/bio.html">BIO</a></li>
                         <li><a href="/pages/talks.html">TALKS</a></li>
                         <li><a href="/pages/research.html">RESEARCH</a></li>
-                        <li><a href="/pages/publications.html">PUBLICATIONS</a></li>
-                        <li><a href="/pages/software.html">SOFTWARE</a></li>
-                        <li><a href="/pages/links.html">LINKS</a></li>
 
-                                <li class="active"><a href="https://fdtomasi.github.io/category/posts.html">posts</a></li>
+                                <li class="active"><a href="/category/posts.html">posts</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -106,17 +101,17 @@
     </nav>
 
     <!-- Page Header -->
-        <header class="intro-header" style="background-image: url('https://fdtomasi.github.io/theme/images/post-bg.jpg')">
+        <header class="intro-header" style="background-image: url('/theme/images/post-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
                         <h1>RMA normalisation</h1>
                         <span class="meta">Posted by
-                                <a href="https://fdtomasi.github.io/author/federico-tomasi.html">Federico Tomasi</a>
+                                <a href="/author/federico-tomasi.html">Federico Tomasi</a>
                              on Thu 10 August 2017
                         </span>
- <span class="meta">38.0 min read </span>                         
+ <span class="meta">40 min read </span>                         
                     </div>
                 </div>
             </div>
@@ -129,15 +124,130 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     <!-- Post Content -->
     <article>
-         
+
      <style type="text/css">/*!
 *
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI colors. */
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
 .ansibold {
   font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -216,12 +326,20 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  border-left-width: 1px;
-  padding-left: 5px;
-  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -234,27 +352,39 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected {
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
   border-color: #ababab;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
 }
 @media print {
-  div.cell.selected {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected.jupyter-soft-selected {
-  border-left-width: 0;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
-}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -450,7 +580,9 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  padding: 0.4em;
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -460,11 +592,24 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
-  /* .CodeMirror-lines */
-  padding: 0;
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
   border: 0;
   border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
 }
 /*
 
@@ -712,6 +857,9 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
+div.output_area .mglyph > img {
+  max-width: none;
+}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -750,7 +898,7 @@ div.output_area svg.unconfined {
 }
 div.output_area pre {
   margin: 0;
-  padding: 0;
+  padding: 1px 0 1px 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -872,6 +1020,10 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
 
 
 
@@ -888,16 +1040,24 @@ div.output_unrecognized a:hover {
 }
 
 
+
+
+
 .rendered_html pre,
+
 
 
 
 .rendered_html tr,
 .rendered_html th,
 
-.rendered_html td,
 
-
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
 .rendered_html * + table {
   margin-top: 1em;
 }
@@ -913,6 +1073,11 @@ div.output_unrecognized a:hover {
 
 .rendered_html img.unconfined,
 
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
 div.text_cell {
   /* Old browsers */
   display: -webkit-box;
@@ -963,8 +1128,15 @@ h6:hover .anchor-link {
   display: none;
 }
 .text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
 .text_cell.unrendered .text_cell_render {
   display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -1064,121 +1236,87 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
-<style type="text/css">
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-</style>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Robust-Multi-array-Average-(RMA)">Robust Multi-array Average (RMA)<a class="anchor-link" href="#Robust-Multi-array-Average-(RMA)">¶</a></h1>
+<h1 id="Robust-Multi-array-Average-(RMA)">Robust Multi-array Average (RMA)<a class="anchor-link" href="#Robust-Multi-array-Average-(RMA)">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>(<i>Microarray pre-processing techniques in Python</i>)</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">¶</a></h2>
+<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Pre-processing methods in biological data analysis are one of the most important part of the analysis itself, because it should be done in a way in which the real data information would not be lost, while the noise and measurement errors must be cleaned out.
 Obviously it is not trivial to separate in an efficient yet reliable way data and noise, especially in dealing with biological data: measurements errors are very likely to be done at each step in the extraction of numeric data from the biological liquid which gene expression measurements come from.
 <i>Microarray</i> is a famous and very used techniques to measure gene expression data. Maybe it is a bit overcome, but microarray data can be easily used to perform analysis onto, while other methodologies are currently under development.
 Only for microarrays there are several preprocessing techniques (RMA, GCRMA, MAS5, etc.) which perform better or poorer: the aim of this project is to analyse another way to pre-process biological microarray data in order to obtain clean data that can be used for further data mining steps.</p>
 <p>All the microarray analysis are traditionally performed with the R programming language, perhaps due to his better performance in this field, but this time the analysis are done in Python for its simplicity and versatility.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.-Loading-files">1. Loading files<a class="anchor-link" href="#1.-Loading-files">¶</a></h2>
+<h2 id="1.-Loading-files">1. Loading files<a class="anchor-link" href="#1.-Loading-files">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The first step in the data analysis is obviously file loading. Microarray expression intensities are saved into .CEL files; the function <code>rd.load_files()</code> is used to load all the .CEL files under the specified directory (the default is "./CEL_files/") and store them into a variable.
 This function is based on a function of the <code>biopython</code> package, a package in python which provides some useful function for dealing with biological data (even if this is the only which is going be used in this project).</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [1]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">"white"</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
 
 <span class="kn">import</span> <span class="nn">rma</span>
-<span class="kn">import</span> <span class="nn">celfile</span> <span class="kn">as</span> <span class="nn">rd</span>
-<span class="kn">import</span> <span class="nn">rmaplot</span> <span class="kn">as</span> <span class="nn">rplt</span>
+<span class="kn">import</span> <span class="nn">celfile</span> <span class="k">as</span> <span class="nn">rd</span>
+<span class="kn">import</span> <span class="nn">rmaplot</span> <span class="k">as</span> <span class="nn">rplt</span>
 
 <span class="n">cels</span><span class="p">,</span> <span class="n">files</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">load_files</span><span class="p">()</span>
 </pre></div>
+
+    </div>
 </div>
 </div>
-</div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Loading files ...
 Loading chip  1 of 20
@@ -1205,49 +1343,53 @@ Loading chip 20 of 20
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <code>cels</code> variable contains a list of Records, that are classes useful to manipulate .CEL files. A .CEL file represents an Affymetrix microarray, and most of all it contains the calculated intensities for each probe. To pass from a list of records to a matrix that can be easily manipulated, it can be simply created a matrix from the PM (Perfect Match) intensities of records.
 The output matrix would be produced putting each GeneChips as a different column, while each row is formed by the (flatten) intensities of the chip, each one is a probe.</p>
 <p><code>rd.load_files()</code> also produces a list of strings, namely the files that are read by the function, which will be useful (and used) later.</p>
 <p>Next, the first thing to do with the loaded files is a log scaling of PM intensities, previously stored in a 2-dimensional array.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [2]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">###</span>
 <span class="c1">### PM Matrix</span>
 <span class="c1">### rows are probes, columns are GeneChips</span>
 <span class="c1">###</span>
 <span class="n">PM</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">c</span><span class="o">.</span><span class="n">intensities</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cels</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
 </pre></div>
+
+    </div>
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A very important part in pre-processing analysis is data visualisation. In the shown code it is used <code>seaborn</code> as a very intuitive and useful package to visualise data in Python: it is a plotting package based on <code>matplotlib</code>, but it provides a great choice of colours and plot types.
 Data are stored in a <code>PM</code> matrix, which for now contains unprocessed data; it can be used in order to produce the first plot of biological data which will be processed later.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [3]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">###</span>
 <span class="c1">### Get unprocessed intensities and boxplot them</span>
 <span class="c1">###</span>
@@ -1256,31 +1398,44 @@ Data are stored in a <code>PM</code> matrix, which for now contains unprocessed 
 <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">PM</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">files</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Unprocessed intensities boxplot"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Unprocessed intensities boxplot&quot;</span><span class="p">)</span>
 
 <span class="c1">###</span>
 <span class="c1">### Histograms of unprocessed intensities for the loaded files</span>
 <span class="c1">###</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
 <span class="n">rplt</span><span class="o">.</span><span class="n">histmult</span><span class="p">(</span><span class="n">PM</span><span class="p">,</span><span class="n">files</span><span class="o">=</span><span class="n">files</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Unprocessed intensities kdeplot"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Unprocessed intensities kdeplot&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+
+    </div>
 </div>
 </div>
-</div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>/usr/local/lib/python2.7/dist-packages/matplotlib/axes/_axes.py:476: UserWarning: No labelled objects found. Use label='...' kwarg on individual plots.
-  warnings.warn("No labelled objects found. "
+<pre>/usr/local/lib/python2.7/dist-packages/matplotlib/axes/_axes.py:476: UserWarning: No labelled objects found. Use label=&#39;...&#39; kwarg on individual plots.
+  warnings.warn(&#34;No labelled objects found. &#34;
 </pre>
 </div>
 </div>
+
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
+
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABIAAAAGkCAYAAABJrV7dAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xl8FFW6+P9Pdaezd1jCbghCYg6KKwkjgoKAE+KMg8gm
@@ -3268,32 +3423,34 @@ Pl0PAN0jaZP+k5LeCNw6Qo4sTy2OLE8tjiyP2zJ8jixPLY4sTy2OTI8xxhhjjOmYrpeAHQKcIel6
 4Cngxoi4aNQcWZ5aHFmeWhxZHrdl+BxZnlocWZ5aHJkeY4wxxhjTLZ0PABljjDHGGGOMMcaYwdJ1
 DiBjjDHGGGOMMcYYM2A8AGSMMcYYY4wxxhhTOR4AMsYYY4wxxhhjjKkcDwAZY4wxxhhjjDHGVI4H
 gIwxxhhjjDHGGGMq5/8AtI8z93lrC7oAAAAASUVORK5CYII=
-"/>
+"
+>
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>These plots represent the calculated distributions of chip (unprocessed) intensities, each one in a different colour. The first one is a "boxplot", in which each box is a distribution (seen "<i>from the high</i>") where the black segment is the highest value. The second plot is built with a <code>seaborn</code> function, namely <code>kdeplot</code>, which shows a continuous approximation of intensities histograms, that is a <i>fit line</i>. The resulting plot is obtained putting all the intensities distributions in the same plot, in order to clearly see their difference.</p>
 <p>It will be useful to analyse differences between these plots and the ones built from intensities after background correction and normalisation; these differences are visible, and they will be shown later.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.-Background-correction">2. Background correction<a class="anchor-link" href="#2.-Background-correction">¶</a></h2>
+<h2 id="2.-Background-correction">2. Background correction<a class="anchor-link" href="#2.-Background-correction">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In biological data the signal that has to be analysed it is sorrounded by noise that instead has to be removed.
 RMA is composed by a series of steps to be performed to clean out noise from the real signal. They are:</p>
@@ -3304,20 +3461,19 @@ RMA is composed by a series of steps to be performed to clean out noise from the
 </ul>
 <p><i>Background correction</i> is the first step that has to be performed on the input intensities, to remove all the intensities which are not part of the real signal. This step is fundamental because unprocessed intensities are never zero, due to the techniques used to colour the microarray chip, even if the intensity extracted is not part of the signal, but it is only noise of the background.</p>
 <p>The observed PM intensities for any probe on an array is assumed to be composed by a signal and a noise component, so that the observed intensity $Y$ is given by</p>
-<p>$$Y = S+N$$</p>
-<p>as the sum of signal $S$ and noise $N$. It is assumed that $S$ follows an exponential distibution with parameter $\alpha$, while $N$ is distributed normally (truncated at 0 to avoid negatives) with mean $\mu$ and variance $\sigma^2$.
+$$Y = S+N$$<p>as the sum of signal $S$ and noise $N$. It is assumed that $S$ follows an exponential distibution with parameter $\alpha$, while $N$ is distributed normally (truncated at 0 to avoid negatives) with mean $\mu$ and variance $\sigma^2$.
 The background-corrected value it is then calculated as</p>
-<p>$$E(s|Y=y)=a+b\frac{\phi(\frac{a}{b}) - \phi(\frac{y-a}{b})}{\Phi(\frac{a}{b}) + \Phi(\frac{y-a}{b}) - 1}$$</p>
-<p>where $a = y-\mu -\sigma^2\alpha$ and $b=\sigma$. In practice the second term on the numerator and on the denominator are 0 and 1, respectively, so the formula is simplified.</p>
+$$E(s|Y=y)=a+b\frac{\phi(\frac{a}{b}) - \phi(\frac{y-a}{b})}{\Phi(\frac{a}{b}) + \Phi(\frac{y-a}{b}) - 1}$$<p>where $a = y-\mu -\sigma^2\alpha$ and $b=\sigma$. In practice the second term on the numerator and on the denominator are 0 and 1, respectively, so the formula is simplified.</p>
 <p>In the code, all RMA correction signal steps are put into the <code>rma.py</code> file, that is imported in the main file of the analysis. The following is the main background correction function, that has to be called to perform the background correction.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [4]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">### [defined in rma.py] ###</span>
 <span class="k">def</span> <span class="nf">bg_parameters</span><span class="p">(</span><span class="n">PM</span><span class="p">):</span>
     <span class="n">PMmax</span> <span class="o">=</span> <span class="n">max_density</span><span class="p">(</span><span class="n">PM</span><span class="p">)</span>
@@ -3332,66 +3488,77 @@ The background-corrected value it is then calculated as</p>
     <span class="k">return</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">PMmax</span><span class="p">,</span> <span class="n">sd</span>
 
 <span class="k">def</span> <span class="nf">bg_correction</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"RMA background correction ..."</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RMA background correction ...&quot;</span><span class="p">)</span>
     <span class="n">X_corrected</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">"Chip n. </span><span class="si">%2i</span><span class="s2">/</span><span class="si">%i</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Chip n. </span><span class="si">%2i</span><span class="s2">/</span><span class="si">%i</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
         <span class="n">v</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span>
         <span class="n">alpha</span><span class="p">,</span> <span class="n">PMmax</span><span class="p">,</span> <span class="n">sd</span> <span class="o">=</span> <span class="n">bg_parameters</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
         <span class="n">a</span> <span class="o">=</span> <span class="n">v</span> <span class="o">-</span> <span class="n">PMmax</span> <span class="o">-</span> <span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="n">sd</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
         <span class="n">PMn</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">sd</span> <span class="o">*</span> <span class="n">phi</span><span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="n">sd</span><span class="p">)</span> <span class="o">/</span> <span class="n">Phi</span><span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="n">sd</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">PMn</span><span class="p">)):</span>
-            <span class="k">print</span><span class="p">(</span><span class="s2">"NaN found. Something is wrong. Chip </span><span class="si">%i</span><span class="s2"> is skipped."</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NaN found. Something is wrong. Chip </span><span class="si">%i</span><span class="s2"> is skipped.&quot;</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
             <span class="k">continue</span>
         <span class="n">X_corrected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">PMn</span><span class="p">))</span>
 
-    <span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">... done."</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">... done.&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">X_corrected</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
 </pre></div>
+
+    </div>
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The principal task of this function is to estimate the three parameters $\alpha$, $\mu$ and $\sigma$. $\mu$ is what in the code is called "PMmax", and it is found by removing all the intensities higher than the value that has the most concentration (found by the function <code>max_density()</code>) and then recalculate the value with has the second most concentration. With this it is possible also to estimate the value of $\sigma$, taking left intensities and assuming they are the noise.</p>
 <p>The function <code>max_density()</code> is implemented with two modalities: 'fast' and 'default'. The mode in which the previous and the following code is run is 'fast', which simply returns the median of the input values. 
 The second mode is more accurate: a Gaussian distribution is fitted over the data, and the value which produce the highest values on the Gaussian function is returned. However this mode was really too expensive from a computational point of view, and so it was optimised with a "more discrete" approximation, that is, taken a <code>np.linspace()</code> of $N$ values ($N &lt;&lt; len(X)$, $X$ input data) in the range of the input data, the one which produced the highest value in the Gaussian fitted over all the data was the winner. This is again an approximation; tests on data have confirmed that this is only really slighly better than the more efficient median over input data, and so the code is run only with 'fast' mode (but 'default' mode was not deleted, for the sake of completeness).</p>
 <p>$\sigma$ is then calculated with the two PM values which produce the highest values in the gaussian distributions that are fitted on the data, considering the left side of PM intensities. This can be seen running the simple following code, which shows the two highest values in data distributions with which $\sigma$ is calculated.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [32]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors.kde</span> <span class="kn">import</span> <span class="n">KernelDensity</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">PM</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">kde</span> <span class="o">=</span> <span class="n">KernelDensity</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">'gaussian'</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])</span>
+<span class="n">kde</span> <span class="o">=</span> <span class="n">KernelDensity</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;gaussian&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])</span>
 <span class="n">xaxis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">150</span><span class="p">)[:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
 <span class="n">gauss</span> <span class="o">=</span> <span class="n">kde</span><span class="o">.</span><span class="n">score_samples</span><span class="p">(</span><span class="n">xaxis</span><span class="p">)</span>
 <span class="n">PMmax</span> <span class="o">=</span> <span class="n">xaxis</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">gauss</span><span class="p">))][</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">PMn</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">X</span> <span class="o">&lt;</span> <span class="n">PMmax</span><span class="p">]</span>
 
-<span class="n">kde</span> <span class="o">=</span> <span class="n">KernelDensity</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">'gaussian'</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">PMn</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])</span>
+<span class="n">kde</span> <span class="o">=</span> <span class="n">KernelDensity</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;gaussian&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">PMn</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])</span>
 <span class="n">gauss2</span> <span class="o">=</span> <span class="n">kde</span><span class="o">.</span><span class="n">score_samples</span><span class="p">(</span><span class="n">xaxis</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xaxis</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">gauss</span><span class="p">),</span><span class="s1">'--r'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xaxis</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">gauss2</span><span class="p">),</span><span class="s1">'--g'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xaxis</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">gauss</span><span class="p">),</span><span class="s1">&#39;--r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xaxis</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">gauss2</span><span class="p">),</span><span class="s1">&#39;--g&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+
+    </div>
 </div>
 </div>
-</div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
+
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAesAAAFXCAYAAACC+2avAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xd81PXhx/HX3eUukxFGCBD2+CAqWBQVHIDbDkeL1oKK
@@ -3662,28 +3829,31 @@ nqbuTtkk17st7ye++/RtIB+4xHEeab5/A1ONMbOIT0p/cTb90rfWrjLGPAXsuJfhZS7zpEgpXz/h
 JZv8BXjIGPMW8d9z/+c2TlJ9Qnwv5DvEL936geM8SWGMORT4K/E//MPGmIuAE4Ap9d8vAzLy8tdG
 PtsPiR/GOIL4cfj3jDEzrLW77UDNDS4iIpLmXO8GFxERkQRU1iIiImlOZS0iIpLmVNYiIiJpTmUt
 IiKS5lTWIiIiaU5lLSIikuZU1iIiImnu/wGxEvQkBhTE0AAAAABJRU5ErkJggg==
-"/>
+"
+>
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Instead, signal distribution parameter $\alpha$ is estimated taking the right part of PM data. The formula used is the maximum likelihood for the rate parameter, that is:</p>
-<p>$$\alpha=\frac{1}{\hat{x}}$$</p>
-<p>where $\hat{x}$ is calculated as the <i>max density</i> of the PM intensities higher than the PMmax intensity (so that the fit line on the intensities higher than the median value produce a negative exponential, intrpreted as the signal of which the parameter $\alpha$ is estimated).</p>
+$$\alpha=\frac{1}{\hat{x}}$$<p>where $\hat{x}$ is calculated as the <i>max density</i> of the PM intensities higher than the PMmax intensity (so that the fit line on the intensities higher than the median value produce a negative exponential, intrpreted as the signal of which the parameter $\alpha$ is estimated).</p>
 <p>The results can be shown running all the background-correction code over the PM matrix and plotting the results.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [5]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">###</span>
 <span class="c1">### Boxplot background-corrected values</span>
 <span class="c1">###</span>
@@ -3695,23 +3865,30 @@ IiKS5lTWIiIiaU5lLSIikuZU1iIiImnu/wGxEvQkBhTE0AAAAABJRU5ErkJggg==
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Background-corrected intensities boxplot"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Background-corrected intensities boxplot&quot;</span><span class="p">)</span>
 
 <span class="c1">###</span>
 <span class="c1">### Histograms of background-corrected values</span>
 <span class="c1">###</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
 <span class="n">rplt</span><span class="o">.</span><span class="n">histmult</span><span class="p">(</span><span class="n">PM_corrected</span><span class="p">,</span><span class="n">files</span><span class="o">=</span><span class="n">files</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Background-corrected intensities kdeplot"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Background-corrected intensities kdeplot&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+
+    </div>
 </div>
 </div>
-</div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>RMA background correction ...
 Chip n.  1/20
@@ -3738,8 +3915,14 @@ Chip n. 20/20
 </pre>
 </div>
 </div>
+
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
+
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABHgAAAGkCAYAAABKNpKwAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XtgFeWd+P/3nEtCAgG5KEID7ZqQh1V325K4RREUsCG0
@@ -5025,36 +5208,37 @@ HLE8VXHE8qgsQgghhBCiFCR5nu96qyFhZjXCcKwGZMCv3f2SsjlieariiOVRWRafI5anKo5Ynqo4
 YnlUFiGEEEIIUQaiBniEEEIIIYQQQgghxPBZsE6WhRBCCCGEEEIIIcRwUIBHCCGEEEIIIYQQouQo
 wCOEEEIIIYQQQghRchTgEUIIIYQQQgghhCg5CvAIIYQQQgghhBBClJz/D/wGZPZMXeB9AAAAAElF
 TkSuQmCC
-"/>
+"
+>
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Background correction is used to remove noise from intensities values; resulting values are now in a more or less comparable way (but not yet perfectly comparable) as it can be seen from last plots. The aim is to normalise these data in order to put all the intensities with comparable values; the idea behind this is that all of these values come from the same distribution, and so it is possible to have similar values (for example with a common mean: more in general with similar parameters of the same distribution).</p>
 <p>Unlike the initial plots, these last two plot have almost the same centre value: the value which produces the highest values in all distributions is always around 0.5 in the $log_2$ intensities scale. This is a good information, because from that it can be seen how this is the right way to process these types of data.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.-Normalisation">3. Normalisation<a class="anchor-link" href="#3.-Normalisation">¶</a></h2>
+<h2 id="3.-Normalisation">3. Normalisation<a class="anchor-link" href="#3.-Normalisation">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The next step in RMA data pre-processing is a normalisation step. Data are background-corrected, but now they should be put in a way to be really comparable: in RMA normalisation is done by <i>quantile normalisation</i>; the goal of quantile normalisation is to give the same distribution of intensities to each array. An intensity is transformed in quantile normalisation with the following formula:</p>
-<p>$$x^*_{ij} = F^{-1}(G_j(x_{ij}))$$</p>
-<p>where $x_{ij}$ is measurement $i$ on array $j$, $G_j$ is the distribution function for array $j$ and $F^{-1}$ is the inverse of the distribution function to be normalised to; the normalised intensity thus is given by $x^*_{ij}$.</p>
+$$x^*_{ij} = F^{-1}(G_j(x_{ij}))$$<p>where $x_{ij}$ is measurement $i$ on array $j$, $G_j$ is the distribution function for array $j$ and $F^{-1}$ is the inverse of the distribution function to be normalised to; the normalised intensity thus is given by $x^*_{ij}$.</p>
 <p>As described in Bolstad et al. (2003), quantile normalisation is obtained in practice with the following steps:</p>
 <ol>
 <li>Given $n$ arrays (GeneChips) of length $p$, form $X$ of dimension $p\times n$ where each array is a column;</li>
@@ -5064,43 +5248,46 @@ TkSuQmCC
 </ol>
 <p>Thus $X_{normalised}$ contains normalised values with the same order as the ones in the original matrix $X$ of unprocessed intensities (the one that was called PM).</p>
 <p>In this way the new matrix will have all values normalised: highest values in the columns are now equal, the same for second highest values, and so on. In the code it is implemented in the following manner:</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [16]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">### [defined in rma.py] ###</span>
 <span class="k">def</span> <span class="nf">qnormalize</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
-    <span class="sd">''' X matrix with samples in the columns and probes across the rows. '''</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"Quantile normalization ..."</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39; X matrix with samples in the columns and probes across the rows. &#39;&#39;&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quantile normalization ...&quot;</span><span class="p">)</span>
     <span class="n">A</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
     <span class="n">AA</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
     <span class="n">I</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">Ord</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">I</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>  <span class="c1"># ordered matrix by column</span>
     <span class="n">AA</span><span class="p">[</span><span class="n">I</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Ord</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)[:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">... done."</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">... done.&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">AA</span>
 </pre></div>
+
+    </div>
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Again, results of this pre-processing step can be at least visually evaluated by plotting the results with box-plots and kde-plots, as seen before.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [6]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">###</span>
 <span class="c1">### Quantile normalisation (works the same as R)</span>
 <span class="c1">###</span>
@@ -5112,31 +5299,44 @@ TkSuQmCC
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Background-corrected normalised intensities boxplot"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Background-corrected normalised intensities boxplot&quot;</span><span class="p">)</span>
 
 <span class="c1">###</span>
 <span class="c1">### Histograms of normalised intensities</span>
 <span class="c1">###</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
 <span class="n">rplt</span><span class="o">.</span><span class="n">histmult</span><span class="p">(</span><span class="n">PM_normalised</span><span class="p">,</span><span class="n">files</span><span class="o">=</span><span class="n">files</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Background-corrected normalised intensities kdeplot"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Background-corrected normalised intensities kdeplot&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+
+    </div>
 </div>
 </div>
-</div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Quantile normalization ...
 	... done.
 </pre>
 </div>
 </div>
+
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
+
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABIEAAAGkCAYAAACmbzXjAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xt8VdWd9/HPyclJTAjXIAoT0paELKrYWhKfBpE7E6J2
@@ -6064,56 +6264,69 @@ ZHlqcWR5anFkeRxL9xxZnlocWZ6sWIwxxhhjzJCYMjIyMvujkpA0jbIUrYBngOsi4oI+empxZHlq
 cWR5anFkeRxL9xxZnlocWZ6sWIwxxhhjzHDoVCWQMcYYY4wxxhhjjJkcujQnkDHGGGOMMcYYY4yZ
 JFwJZIwxxhhjjDHGGPMiwJVAxhhjjDHGGGOMMS8CXAlkjDHGGGOMMcYY8yLAlUDGGGOMMcYYY4wx
 LwL+H7/t9CdyhzB1AAAAAElFTkSuQmCC
-"/>
+"
+>
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here it can be seen as normalisation works: now kde-plots of all the intensities between GeneChips are almost the same, and so their plot overlap. In the left plot there are the same distributions and they are all aligned. Signal at this point is background-corrected and normalised, and plots of each chip produce almost the same distribution.</p>
 <p>Relevant is also the shape of normalised signal: it is almost an exponential distribution as it was assumed to be, without noise that has been removed well.</p>
 <p>At this point an interesting comparison can be the one with the quantile normalisation of R. In Python, R code can be imported using a Python package, "<code>RPy2</code>", which allows to execute R functions inside Python code.
 The R function works with R matrix, so input must be reconstructed before the function call.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [34]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">###</span>
 <span class="c1">### R quantile normalisation</span>
 <span class="c1">###</span>
-<span class="kn">import</span> <span class="nn">rpy2.robjects</span> <span class="kn">as</span> <span class="nn">robjects</span>
+<span class="kn">import</span> <span class="nn">rpy2.robjects</span> <span class="k">as</span> <span class="nn">robjects</span>
 
 <span class="c1"># Reconstructing the matrix ...</span>
 <span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="n">PM_corrected</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">PM_corrected</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
 <span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">v</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">]</span>
-<span class="n">m</span> <span class="o">=</span> <span class="n">robjects</span><span class="o">.</span><span class="n">r</span><span class="p">[</span><span class="s1">'matrix'</span><span class="p">](</span><span class="n">robjects</span><span class="o">.</span><span class="n">FloatVector</span><span class="p">(</span><span class="n">v</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="n">PM_corrected</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">robjects</span><span class="o">.</span><span class="n">r</span><span class="p">(</span><span class="s1">'require("preprocessCore")'</span><span class="p">)</span>
-<span class="n">norm_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">robjects</span><span class="o">.</span><span class="n">r</span><span class="p">(</span><span class="s1">'normalize.quantiles'</span><span class="p">)(</span><span class="n">m</span><span class="p">))</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">robjects</span><span class="o">.</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;matrix&#39;</span><span class="p">](</span><span class="n">robjects</span><span class="o">.</span><span class="n">FloatVector</span><span class="p">(</span><span class="n">v</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="n">PM_corrected</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">robjects</span><span class="o">.</span><span class="n">r</span><span class="p">(</span><span class="s1">&#39;require(&quot;preprocessCore&quot;)&#39;</span><span class="p">)</span>
+<span class="n">norm_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">robjects</span><span class="o">.</span><span class="n">r</span><span class="p">(</span><span class="s1">&#39;normalize.quantiles&#39;</span><span class="p">)(</span><span class="n">m</span><span class="p">))</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">norm_a</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">files</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Background-corrected normalised intensities boxplot (with R)"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Background-corrected normalised intensities boxplot (with R)&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">"Difference norm: </span><span class="si">%f</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">norm_a</span> <span class="o">-</span> <span class="n">PM_normalised</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">PM_normalised</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Difference norm: </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">norm_a</span> <span class="o">-</span> <span class="n">PM_normalised</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">PM_normalised</span><span class="p">)))</span>
 </pre></div>
+
+    </div>
 </div>
 </div>
-</div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
+
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeEAAAGICAYAAAB2sVicAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XmcHHWd//HXJCEnIUwuchEgQD6gwnosHuHUcIPAgorK
@@ -6361,61 +6574,67 @@ vMrMZhV3NLMTgccHUG7M7LzlxszOW27MbOXGz85bbszsvOXGzm6aw9GfAH5hZouBvxHadRCwO3Ds
 AMqNmZ233JjZecuNma3c+Nl5y42Znbfc2NnN8wAHMxtMuOTbgK3AQ+5+50DLjZmdt9yY2XnLjZmt
 3PjZecuNmZ233NjZTVOERUREBppmOScsIiIy4KgIi4iIZERFWEREJCMqwiIiIhlRERYREcnI/wfx
 462Uxio/ogAAAABJRU5ErkJggg==
-"/>
+"
+>
 </div>
+
 </div>
+
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Difference norm: 0.000412
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The boxplot of intensities after the quantile normalisation is almost the same as before. The relative difference between the calculated intensities is actually 0.000412: of the order of $10^{-4}$ it is pretty negligible, so it can be concluded that the quantile normalisation purely implemented in Python works well, like the one implemented in R.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="4.-Summarisation">4. Summarisation<a class="anchor-link" href="#4.-Summarisation">¶</a></h2>
+<h2 id="4.-Summarisation">4. Summarisation<a class="anchor-link" href="#4.-Summarisation">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Last step in the pipeline of biological data pre-processing with RMA technique is the summarisation. This step is needed because of the microarray geometry: each row is a probe, but in each microarray multiple probes are measuring the same portion of RNA (in order to obtain reliable measurements) so at this time the aim is to average rows (probes) which measured the same RNA pieces.</p>
 <p>RMA expression measure is actually based upon fitting the model</p>
-<p>$$y_{kij} = \beta_{kj}+\alpha_{ki}+\epsilon_{kij}$$</p>
-<p>where the indices $k$, $j$ and $i$ refer to probe set, chip and probe, respectively; $y_{kij}$ is the response term ($log_2$ transformed, background-corrected and normalised PM intensity), $\beta_{kj}$ and $\alpha_{ki}$ are the chip effect and probe effect, and $\epsilon_{kij}$ is the error term. From this model it can be seen how at this point from a probes-chips matrix it should be obtain a <i>probe sets</i>-chips matrix, in order to put together probes which measure the same RNA pieces.</p>
+$$y_{kij} = \beta_{kj}+\alpha_{ki}+\epsilon_{kij}$$<p>where the indices $k$, $j$ and $i$ refer to probe set, chip and probe, respectively; $y_{kij}$ is the response term ($log_2$ transformed, background-corrected and normalised PM intensity), $\beta_{kj}$ and $\alpha_{ki}$ are the chip effect and probe effect, and $\epsilon_{kij}$ is the error term. From this model it can be seen how at this point from a probes-chips matrix it should be obtain a <i>probe sets</i>-chips matrix, in order to put together probes which measure the same RNA pieces.</p>
 <p>Actually this step is left to the reader, as it does not involve signal manipulation and normalisation. In order to perform this last step it would be required the geometry of the GeneChips used, namely HG-133A; then rows which correspond to the same probe set must be averaged in order to produce a single intensity value for each probe set. In this way a final reliable matrix with the corrected intensities is produced.</p>
 <p>Then, as the last step of the pipeline of RMA, has to be implemented for RMA another function to finalise the output matrix: that is the <i>median polish</i>.</p>
 <p>With this function it is built a residuals matrix removed from the probe set matrix obtained, which completes the pipeline of RMA.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [9]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">### [defined in rma.py] ###</span>
 <span class="k">def</span> <span class="nf">medianpolish</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
-    <span class="sd">''' The idea is to estimate the errors by “median polishing” and</span>
+    <span class="sd">&#39;&#39;&#39; The idea is to estimate the errors by “median polishing” and</span>
 <span class="sd">    then subtract the estimated errors to obtain adjusted</span>
-<span class="sd">    probe summaries'''</span>
+<span class="sd">    probe summaries&#39;&#39;&#39;</span>
 
-    <span class="k">print</span><span class="p">(</span><span class="s2">"Median polishing ..."</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Median polishing ...&quot;</span><span class="p">)</span>
     <span class="n">R</span> <span class="o">=</span> <span class="n">X</span>  <span class="c1"># the aim is to build a residuals matrix</span>
     <span class="n">maxiter</span> <span class="o">=</span> <span class="mi">10</span>
     <span class="n">eps</span> <span class="o">=</span> <span class="mf">0.01</span>
@@ -6431,26 +6650,28 @@ AMqNmZ233JjZecuNma3c+Nl5y42Znbfc2NnN8wAHMxtMuOTbgK3AQ+5+50DLjZmdt9yY2XnLjZmt
         <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="mf">0.0</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">oldsum</span><span class="o">/</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">eps</span><span class="p">:</span>
             <span class="k">break</span>
         <span class="n">oldsum</span> <span class="o">=</span> <span class="n">s</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">... done."</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">... done.&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">X</span> <span class="o">-</span> <span class="n">R</span>
 </pre></div>
+
+    </div>
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the code there is not a building of a probe set matrix, so the function is tested with all input data (as each probe set would contain just a single probe). Thus, median polishing the probes-chips PM matrix, a new matrix is produced, where it is produced by a difference between the initial matrix $X$ and a residual matrix $R$, produced from an iterative algorithm.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [36]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">###</span>
 <span class="c1">### Summarisation: median polish</span>
 <span class="c1">###</span>
@@ -6460,24 +6681,37 @@ AMqNmZ233JjZecuNma3c+Nl5y42Znbfc2NnN8wAHMxtMuOTbgK3AQ+5+50DLjZmdt9yY2XnLjZmt
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
 <span class="c1">#plt.ylim(0,6)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"PM background-corrected, normalised and summarised"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;PM background-corrected, normalised and summarised&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+
+    </div>
 </div>
 </div>
-</div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Median polishing ...
 	... done.
 </pre>
 </div>
 </div>
+
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
+
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAdgAAAGICAYAAADiV/FuAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XmcXGWd7/FPJyErIXRnIRso6w/XuW7jNYCgGJBFcRm3
@@ -6724,70 +6958,89 @@ t9zI7NxyI7Nzy43Mzi03Mju33NDsVhwifi/wXTO7C/hj8ZjPAY4EXjxGs3PLjczOLTcyO7fcyOzc
 ciOzc8uNzM4tNzS7JRf7N7PxpCHPBvQCd7v7LWM5O7fcyOzcciOzc8uNzM4tNzI7t9zI7NxyI7P1
 azoiIiIBWj7ISURE5PFABVZERCSACqyIiEgAFVgREZEAKrAiIiIB/j+JF66AdZ9C7wAAAABJRU5E
 rkJggg==
-"/>
+"
+>
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The new matrix after the median polish algorithm actually looks like the one before, because the input matrix of RMA median polish should not be a probes-chips matrix, but a <i>probe sets</i>-chips matrix, which would give a different and a really final result. Having already normalise the same data in the previous step the output is practically the same as before; but this step becomes very important working with the probe set-chips matrix.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">¶</a></h2>
+<h2 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Variable <code>PM_summarised</code> contains the matrix with processed intensities, which can be used for further data analysis.</p>
 <p>As said before, a very important task in all data pre-processing steps is data visualisation, which gives visual feedback of what is being done with data (that are signals, actually). For this reason it is possible and strongly advised to show the intensities which have been processed until now, for a visual feedback of results obtained.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [37]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">###</span>
 <span class="c1">### Difference between an unprocessed and a processed GeneChip</span>
 <span class="c1">###</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">set_cmap</span><span class="p">(</span><span class="s1">'cool'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">set_cmap</span><span class="p">(</span><span class="s1">&#39;cool&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">PM</span><span class="p">[:,</span><span class="mi">16</span><span class="p">],</span> <span class="p">(</span><span class="mi">712</span><span class="p">,</span><span class="mi">712</span><span class="p">)))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"16th PM unprocessed"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;16th PM unprocessed&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">PM_summarised</span><span class="p">[:,</span><span class="mi">16</span><span class="p">],</span> <span class="p">(</span><span class="mi">712</span><span class="p">,</span><span class="mi">712</span><span class="p">)))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"16th PM processed"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;16th PM processed&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+
+    </div>
 </div>
 </div>
-</div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
+
+
+
 <div class="output_text output_subarea ">
-<pre><matplotlib.figure.figure 0x7f6b980ff9d0="" at=""></matplotlib.figure.figure></pre>
+<pre>&lt;matplotlib.figure.Figure at 0x7f6b980ff9d0&gt;</pre>
 </div>
+
 </div>
+
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
+
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA1YAAAFeCAYAAACGkI4vAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzsvXe4XUd1Nv6eXm855/am2zXq1VZz7zaGuAEG7Ni0QAgp
@@ -12734,34 +12987,36 @@ F6N8BKyMvAr0LgoZeQ3IR2CeZOSCKFYWFhYWFoTjOB4wZGKu6L7AmmhhYWFhYbGocQXlIzBPMtIq
 VhYWFhYWFhYWFhYWFnNELlQFtLCwsLCwsLCwsLCwWNSwipWFhYWFhYWFhYWFhcUcYRUrCwsLCwsL
 CwsLCwuLOcIqVhYWFhYWFhYWFhYWFnOEVawsLCwsLCwsLCwsLCzmCKtYWVhYWFhYWFhYWFhYzBH/
 F6OYqB8zXEmtAAAAAElFTkSuQmCC
-"/>
+"
+>
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Even if the images are small it can be felt how the second image has more contrast, while values are in a range nearer 0. This is a good result, as it can be expected that many of the intensities must have very small values, as not all genes can be active. High values as the ones found in unprocessed intensities were caused by background that is noise. RMA correction can improve these data, reducing noise from the signal; new intensities can in this way be efficiently used for next analysis.</p>
 <p>Another important plots which are designed in microarray normalisation analysis are the so-called <i>MA-plots</i>.
 A MA-plot is a visual representation of two channel DNA microarray gene expression data which has been transformed onto the $M$ (log ratios) and $A$ (mean average) scale.
 $M$ and $A$ are defined by the following equations:</p>
-<p>$$M = log_2(R) - log_2(G)$$
-$$A = \frac{1}{2}(log_2(R)+log_2(G))$$</p>
-<p>where $R$ (Red) and $G$ (Green) are the two channel of the microarray to be compared. In a single-channel microarray there is not such intensities difference: thus MA-plot in RMA single-channel microarray analysis are built from intensities of a single GeneChip in contrast to a pseudo-median reference GeneChip, built from the median of each rows (for this reason it is a pseudo-median: this chip does not exists as a single column, but is build from the median of each row).</p>
+$$M = log_2(R) - log_2(G)$$$$A = \frac{1}{2}(log_2(R)+log_2(G))$$<p>where $R$ (Red) and $G$ (Green) are the two channel of the microarray to be compared. In a single-channel microarray there is not such intensities difference: thus MA-plot in RMA single-channel microarray analysis are built from intensities of a single GeneChip in contrast to a pseudo-median reference GeneChip, built from the median of each rows (for this reason it is a pseudo-median: this chip does not exists as a single column, but is build from the median of each row).</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [38]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">### [defined in rmaplot.py] ###</span>
 <span class="k">def</span> <span class="nf">maplot</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">):</span>
-    <span class="sd">''' Draw 2D MA-plots for RMA microarray processing.</span>
+    <span class="sd">&#39;&#39;&#39; Draw 2D MA-plots for RMA microarray processing.</span>
 
 <span class="sd">        Input (for RMA):</span>
 
@@ -12777,12 +13032,12 @@ $$A = \frac{1}{2}(log_2(R)+log_2(G))$$</p>
 
 <span class="sd">        M, A, xline, yline = maplot(PM[:,0], np.median(PM, axis=1))</span>
 <span class="sd">        plt.figure()</span>
-<span class="sd">        plt.scatter(A,M,color='k',alpha=.2,s=2)</span>
-<span class="sd">        plt.plot(xline,yline,'r--',lw=1,alpha=.8)</span>
-<span class="sd">        plt.axis('tight')</span>
+<span class="sd">        plt.scatter(A,M,color=&#39;k&#39;,alpha=.2,s=2)</span>
+<span class="sd">        plt.plot(xline,yline,&#39;r--&#39;,lw=1,alpha=.8)</span>
+<span class="sd">        plt.axis(&#39;tight&#39;)</span>
 <span class="sd">        plt.show()</span>
 
-<span class="sd">        '''</span>
+<span class="sd">        &#39;&#39;&#39;</span>
     <span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
     <span class="n">A</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
 
@@ -12800,33 +13055,42 @@ $$A = \frac{1}{2}(log_2(R)+log_2(G))$$</p>
 <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">221</span><span class="p">,</span><span class="mi">225</span><span class="p">),</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">19</span><span class="p">]):</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
     <span class="n">M</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">xline</span><span class="p">,</span> <span class="n">yline</span> <span class="o">=</span> <span class="n">rplt</span><span class="o">.</span><span class="n">maplot</span><span class="p">(</span><span class="n">PM</span><span class="p">[:,</span><span class="n">i</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">PM</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">M</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'k'</span><span class="p">,</span><span class="n">alpha</span><span class="o">=.</span><span class="mi">2</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">A</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">A</span><span class="o">.</span><span class="n">max</span><span class="p">()),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s1">'g'</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xline</span><span class="p">,</span><span class="n">yline</span><span class="p">,</span><span class="s1">'r--'</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">alpha</span><span class="o">=.</span><span class="mi">8</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'tight'</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'A'</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'M'</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">files</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="s1">' vs pseudo-median reference chip'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">M</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=.</span><span class="mi">2</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">A</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">A</span><span class="o">.</span><span class="n">max</span><span class="p">()),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;g&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xline</span><span class="p">,</span><span class="n">yline</span><span class="p">,</span><span class="s1">&#39;r--&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">alpha</span><span class="o">=.</span><span class="mi">8</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">files</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39; vs pseudo-median reference chip&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">221</span><span class="p">,</span><span class="mi">225</span><span class="p">),</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">19</span><span class="p">]):</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
     <span class="n">M</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">xline</span><span class="p">,</span> <span class="n">yline</span> <span class="o">=</span> <span class="n">rplt</span><span class="o">.</span><span class="n">maplot</span><span class="p">(</span><span class="n">PM_normalised</span><span class="p">[:,</span><span class="n">i</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">PM_normalised</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">M</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'k'</span><span class="p">,</span><span class="n">alpha</span><span class="o">=.</span><span class="mi">2</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">A</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">A</span><span class="o">.</span><span class="n">max</span><span class="p">()),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s1">'g'</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xline</span><span class="p">,</span><span class="n">yline</span><span class="p">,</span><span class="s1">'r--'</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">alpha</span><span class="o">=.</span><span class="mi">8</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'tight'</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'A'</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'M'</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">files</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="s1">' normalized vs pseudo-median reference chip'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">M</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=.</span><span class="mi">2</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">A</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">A</span><span class="o">.</span><span class="n">max</span><span class="p">()),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;g&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xline</span><span class="p">,</span><span class="n">yline</span><span class="p">,</span><span class="s1">&#39;r--&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">alpha</span><span class="o">=.</span><span class="mi">8</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">files</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39; normalized vs pseudo-median reference chip&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+
+    </div>
 </div>
 </div>
-</div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
+
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA4IAAAJqCAYAAAB+af46AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzsvXt4nOld3/2xzrJWli1rV1pLLNKu8Y0x9euaOt2NqwS2
@@ -14600,11 +14864,19 @@ CsI6kNRQQdg+fBr4X12P/SXwg5Zl7S/BeARBEARhKyDzoyCsA0kNFQRBEARBEARBKDMkIigIgiAI
 giAIglBmiBAUBEEQBEEQBEEoM0QICoIgCIIgCIIglBkiBAVBEARBEARBEMoMEYKCIAiCIAiCIAhl
 hghBQRAEQRAEQRCEMkOEoCAIgiAIgiAIQpkhQlAQBEEQBEEQBKHM+P8B6zB2CS9/f0cAAAAASUVO
 RK5CYII=
-"/>
+"
+>
 </div>
+
 </div>
+
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
+
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA3wAAAJqCAYAAABw7EIQAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzsvXt8Vdd94PtF6IEsC4EsLBlUD4oJKw4tw5BLa4eSZhxC
@@ -16345,28 +16617,35 @@ NM0/LlrHCCGEkCLC8ZGQ3LiK3QFCiGPOAfiRaZpnZYNhGOcAnEc6SJ0QQgjZi3B8JCQHdOkkpHz4
 VQD/s2XbnwP4lGEYR4rQH0IIIaQU4PhISA7o0kkIIYQQQgghFQotfIQQQgghhBBSoVDwEUIIIYQQ
 QkiFQsFHCCGEEEIIIRUKBR8hhBBCCCGEVCgUfIQQQgghhBBSoVDwEUIIIYQQQkiFQsFHCCGEEEII
 IRUKBR8hhBBCCCGEVCj/P109gK9eky80AAAAAElFTkSuQmCC
-"/>
+"
+>
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>These plots are very useful to evaluate benefits of data normalisation; each image contains 4 figures, in which a random GeneChip is compared to the pseudo-median chip, before and after the processing. Each one of the first 4 figures have the median value not aligned with the plot centre; normalisation produces good outputs because the median across y-axis (that is the difference between the logarithms of the two channels) is zero, as it can be seen from the overlapping of the green line (a constant zero line) and the red line (built from the median of points).</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>RMA is a very powerful and relative easy way to pre-process biological data. Usually these analysis are performed in other programming languages (as R), while the real implementation of functions is actually in C, because is computationally more efficient. The aim of this project was to analyse unprocessed biological data using Python for its simplicity, implementing a common pre-processing algorithm (RMA) in this programming language. The results are really interesting, even if a C-implementation of actual functions would surely result in a more efficient RMA implementation.</p>
+
 </div>
 </div>
 </div>
+ 
+
+
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
@@ -16397,35 +16676,21 @@ IRUKBR8hhBBCCCGEVCj/P109gK9eky80AAAAAElFTkSuQmCC
 </script>
 
     </article>
-    
 
+
+<!--  -->
 
 
 
 
 
         <div class="tags">
-            <p>tags: <a href="https://fdtomasi.github.io/tag/python.html">python</a>, <a href="https://fdtomasi.github.io/tag/rma.html">rma</a>, <a href="https://fdtomasi.github.io/tag/normalisation.html">normalisation</a>, <a href="https://fdtomasi.github.io/tag/bioinformatics.html">bioinformatics</a></p>
+            <p>tags: <a href="/tag/python.html">python</a>, <a href="/tag/rma.html">rma</a>, <a href="/tag/normalisation.html">normalisation</a>, <a href="/tag/bioinformatics.html">bioinformatics</a></p>
         </div>
 
     <hr>
 
-        <div class="comments">
-            <h2>Comments</h2>
-            <div id="disqus_thread"></div>
-            <script type="text/javascript">
-                var disqus_shortname = 'fdtomasi-github';
-                var disqus_identifier = 'rma-normalisation.html';
-                var disqus_url = 'https://fdtomasi.github.io/rma-normalisation.html';
-                (function() {
-                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                    dsq.src = '//fdtomasi-github.disqus.com/embed.js';
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the comments.</noscript>
-        </div>
-    
+
             </div>
         </div>
     </div>
@@ -16463,14 +16728,6 @@ IRUKBR8hhBBCCCGEVCj/P109gK9eky80AAAAAElFTkSuQmCC
                                 </a>
                             </li>
                             <li>
-                                <a href="https://plus.google.com/u/1/108368396270480629290">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
                                 <a href="https://www.youtube.com/channel/UCcRYAdfZQ_jj-Q9yirpbbbQ">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
@@ -16503,32 +16760,14 @@ IRUKBR8hhBBCCCGEVCj/P109gK9eky80AAAAAElFTkSuQmCC
     </footer>
 
     <!-- jQuery -->
-    <script src="https://fdtomasi.github.io/theme/js/jquery.min.js"></script>
+    <script src="/theme/js/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="https://fdtomasi.github.io/theme/js/bootstrap.min.js"></script>
+    <script src="/theme/js/bootstrap.min.js"></script>
 
         <!-- Custom Theme JavaScript -->
-        <script src="https://fdtomasi.github.io/theme/js/clean-blog.min.js"></script>
+        <script src="/theme/js/clean-blog.min.js"></script>
 
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-103577232-1', 'auto');
-    ga('send', 'pageview');
-</script>
-<script type="text/javascript">
-    var disqus_shortname = 'fdtomasi-github';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>
     
 
 

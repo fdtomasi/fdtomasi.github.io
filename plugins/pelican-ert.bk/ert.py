@@ -12,7 +12,7 @@ ERT_FORMAT = '{time} read'
 def initialize(gen):
     global ERT_WPM, ERT_FORMAT
     for option in ['ERT_WPM', 'ERT_FORMAT']:
-        if not option in gen.settings.keys():
+        if not option in list(gen.settings.keys()):
             log.warning(
                 'The necessary config option is missing: {},\
  using default value: \'{}\''.format(option, globals()[option])
@@ -22,7 +22,7 @@ def initialize(gen):
 
 
 def strip_tags(content):
-    return re.sub(u'<!--.*?-->|<[^>]*>', '', content)
+    return re.sub('<!--.*?-->|<[^>]*>', '', content)
 
 
 def estimate(text):

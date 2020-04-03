@@ -6,7 +6,7 @@ This plugin adds a disqus_comments property to all articles.
 Comments are fetched at generation time using disqus API.
 """
 
-from __future__ import unicode_literals
+
 from disqusapi import DisqusAPI, Paginator
 from pelican import signals
 
@@ -36,10 +36,10 @@ def disqus_static(generator):
     # build a {post_id: [child_post1, child_post2, ...]} dict
     child_dict = {}
     for post in posts:
-        if post['id'] not in child_dict.keys():
+        if post['id'] not in list(child_dict.keys()):
             child_dict[post['id']] = []
         if post['parent'] is not None:
-            if str(post['parent']) not in child_dict.keys():
+            if str(post['parent']) not in list(child_dict.keys()):
                 child_dict[str(post['parent'])] = []
             child_dict[str(post['parent'])].append(post)
 
@@ -58,7 +58,7 @@ def postcounter(node):
     return 1 + sum([postcounter(n) for n in node['children']])
 
 def build_post_dict(post_dict, child_dict, thread_dict, post):
-    if post['thread'] not in thread_dict.keys():
+    if post['thread'] not in list(thread_dict.keys()):
         return # invalid thread, should never happen
 
     build_child_dict(child_dict, post)
@@ -66,7 +66,7 @@ def build_post_dict(post_dict, child_dict, thread_dict, post):
     if post['parent'] is not None:
         return # this is a child post, don't want to display it here
 
-    if thread_dict[post['thread']] not in post_dict.keys():
+    if thread_dict[post['thread']] not in list(post_dict.keys()):
         post_dict[thread_dict[post['thread']]] = []
     post_dict[thread_dict[post['thread']]].append(post)
 

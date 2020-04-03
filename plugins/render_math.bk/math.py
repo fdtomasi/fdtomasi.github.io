@@ -91,7 +91,7 @@ def process_settings(pelicanobj):
 
         if key == 'align':
             try:
-                typeVal = isinstance(value, basestring)
+                typeVal = isinstance(value, str)
             except NameError:
                 typeVal = isinstance(value, str)
 
@@ -123,7 +123,7 @@ def process_settings(pelicanobj):
 
         if key == 'latex_preview':
             try:
-                typeVal = isinstance(value, basestring)
+                typeVal = isinstance(value, str)
             except NameError:
                 typeVal = isinstance(value, str)
 
@@ -134,7 +134,7 @@ def process_settings(pelicanobj):
 
         if key == 'color':
             try:
-                typeVal = isinstance(value, basestring)
+                typeVal = isinstance(value, str)
             except NameError:
                 typeVal = isinstance(value, str)
 
@@ -162,16 +162,16 @@ def process_settings(pelicanobj):
         if key == 'tex_extensions' and isinstance(value, list):
             # filter string values, then add '' to them
             try:
-                value = filter(lambda string: isinstance(string, basestring), value)
+                value = [string for string in value if isinstance(string, str)]
             except NameError:
-                value = filter(lambda string: isinstance(string, str), value)
+                value = [string for string in value if isinstance(string, str)]
 
-            value = map(lambda string: "'%s'" % string, value)
+            value = ["'%s'" % string for string in value]
             mathjax_settings[key] = ',' + ','.join(value)
 
         if key == 'mathjax_font':
             try:
-                typeVal = isinstance(value, basestring)
+                typeVal = isinstance(value, str)
             except NameError:
                 typeVal = isinstance(value, str)
 
