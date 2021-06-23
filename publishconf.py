@@ -10,7 +10,7 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-PLUGINS = [u"disqus_static"]
+# PLUGINS = [u"disqus_static"]
 
 SITEURL = 'https://fdtomasi.github.io/'
 RELATIVE_URLS = False

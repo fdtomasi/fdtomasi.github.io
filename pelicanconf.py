@@ -27,7 +27,6 @@ SOCIAL = (
     ("facebook", "https://www.facebook.com/fede.tomatoma"),
     ("twitter", "https://twitter.com/kslw_"),
     ("instagram", "https://www.instagram.com/klsw_/"),
-    ("youtube", "https://www.youtube.com/channel/UCcRYAdfZQ_jj-Q9yirpbbbQ"),
     ("github", "https://github.com/fdtomasi"),
 )
 # SHOW_SOCIAL_ON_INDEX_PAGE_HEADER = 1
@@ -71,6 +70,7 @@ DISPLAY_PAGES_ON_MENU = 0  # avoid duplicates
 # SHOW_FULL_ARTICLE = True
 
 STATIC_PATHS = ["images", "photos", "extra"]
+ARTICLE_PATHS = ['blog']
 # # avoid to process such html
 # PAGE_EXCLUDES = ['older']
 # ARTICLE_EXCLUDES = ['older']
