@@ -107,7 +107,7 @@
                                 <a href="https://fdtomasi.github.io/author/federico-tomasi.html">Federico Tomasi</a>
                              on Mon 24 July 2017
                         </span>
- <span class="meta">3 min read </span>                         
+                        
                     </div>
                 </div>
             </div>
@@ -131,68 +131,13 @@ First was time for the keynote by Boudewijn Lelieveld, "Visual analytics for spa
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
 <h2>Deep networks with string data</h2>
 <p>After that, the last talks of the morning were a bit difficult to follow, so let's get straight to the afternoon.
-In the afternoon, I switched to the <a href="http://hitseq.org/">HiTSeq</a>. The website of course is not as nice as the BioVis' one, but the arguments were equally interesting, maybe a little bit more machine learning oriented. Interesting was Xu Min talk about "Chromatin accessibility prediction via convolutional long short-term memory networks with k-mer embedding". <a href="https://en.wikipedia.org/wiki/Deep_learning">Deep networks</a>! I hadn't seen any up to now. Such networks were used with a string embedding, in particular after extracting <span class="math">\(k\)</span>-mers from the words. This is similar to the string kernel methods, but with the difference that, well, this is not a kernel. And you can use it with <a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">LSTM</a> supervised learning. As for the implementations, it is possible to use it in <a href="https://keras.io/">Keras</a>, <a href="http://deeplearning.net/software/theano/">Theano</a>. So basically the learning is done in two steps.</p>
+In the afternoon, I switched to the <a href="http://hitseq.org/">HiTSeq</a>. The website of course is not as nice as the BioVis' one, but the arguments were equally interesting, maybe a little bit more machine learning oriented. Interesting was Xu Min talk about "Chromatin accessibility prediction via convolutional long short-term memory networks with k-mer embedding". <a href="https://en.wikipedia.org/wiki/Deep_learning">Deep networks</a>! I hadn't seen any up to now. Such networks were used with a string embedding, in particular after extracting $k$-mers from the words. This is similar to the string kernel methods, but with the difference that, well, this is not a kernel. And you can use it with <a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">LSTM</a> supervised learning. As for the implementations, it is possible to use it in <a href="https://keras.io/">Keras</a>, <a href="http://deeplearning.net/software/theano/">Theano</a>. So basically the learning is done in two steps.</p>
 <ol>
-<li>unsupervised training of <span class="math">\(k\)</span>-mer embedding;</li>
+<li>unsupervised training of $k$-mer embedding;</li>
 <li>supervised learning with LSTM.</li>
 </ol>
 <p>During all the talk I had the suspect that he had been reading all the time. Nevertheless, it was a nice example of usage of deep networks with string data. <a href="https://academic.oup.com/bioinformatics/article/33/14/i92/3953949/Chromatin-accessibility-prediction-via">Read more here</a>.</p>
 <p>Unfortunately, the weather was very bad, and I did not have time to take any photos anyway. Bad day.</p>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
     </article>
 
 

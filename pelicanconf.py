@@ -45,19 +45,6 @@ DEFAULT_PAGINATION = 10
 
 MARKUP = ("md", "ipynb")
 
-
-PLUGIN_PATHS = ["./plugins", "./pelican-plugins"]
-
-PLUGINS = [
-    "ipynb.markup",
-    # 'pelican-btex',
-    "jinja2content",
-    "pelican-ert",
-    "neighbors",
-    "render_math",
-    "photos",
-]
-
 # IPYNB_IGNORE_CSS=True
 
 THEME = os.path.join(os.path.expanduser("~/src/fdtomasi"), "pelican-clean-blog")
