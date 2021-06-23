@@ -3,8 +3,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-output/photos/**/
-
 # C extensions
 *.so
 
@@ -94,3 +92,5 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+output/
