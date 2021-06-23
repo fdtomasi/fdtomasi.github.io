@@ -1,165 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="generator" content="Pelican" />
-        <title>Federico Tomasi Blog - posts</title>
-        <link rel="stylesheet" href="fdtomasi.github.io/theme/css/main.css" />
-        <link href="fdtomasi.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Federico Tomasi Blog Atom Feed" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <title>Federico Tomasi - Articles in the posts category</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="https://fdtomasi.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="https://fdtomasi.github.io/theme/css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Code highlight color scheme -->
+            <link href="https://fdtomasi.github.io/theme/css/code_blocks/darkly.css" rel="stylesheet">
+
+            <!-- CSS specified by the user -->
+            <link href="https://fdtomasi.github.io/extra/redly.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+                <meta property="og:locale" content="">
+		<meta property="og:site_name" content="Federico Tomasi">
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:site" content="@kslw_">
+            <meta name="twitter:title" content="Federico Tomasi">
+            <meta name="twitter:description" content="View the blog.">
+                <meta name="twitter:image" content="https://fdtomasi.github.io/theme/images/post-bg.jpg">
+    
 </head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="fdtomasi.github.io/">Federico Tomasi Blog</a></h1>
-                <nav><ul>
-                    <li><a href="fdtomasi.github.io/pages/bio.html">BIO</a></li>
-                    <li><a href="fdtomasi.github.io/pages/links.html">LINKS</a></li>
-                    <li><a href="fdtomasi.github.io/pages/publications.html">PUBLICATIONS</a></li>
-                    <li><a href="fdtomasi.github.io/pages/research.html">RESEARCH</a></li>
-                    <li><a href="fdtomasi.github.io/pages/software.html">SOFTWARE</a></li>
-                    <li><a href="fdtomasi.github.io/pages/talks.html">TALKS</a></li>
-                    <li class="active"><a href="fdtomasi.github.io/category/posts.html">posts</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+<body>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="fdtomasi.github.io/ismb-eccb-2017-day-3.html">ISMB/ECCB 2017 conference, Day 3</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2017-07-24T23:15:00+01:00">
-                Published: Mon 24 July 2017
-        </abbr>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://fdtomasi.github.io/">Federico Tomasi</a>
+            </div>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="fdtomasi.github.io/author/federico-tomasi.html">Federico Tomasi</a>
-        </address>
-<p>In <a href="fdtomasi.github.io/category/posts.html">posts</a>.</p>
-<p>tags: <a href="fdtomasi.github.io/tag/conference.html">conference</a> <a href="fdtomasi.github.io/tag/life-sciences.html">life sciences</a> <a href="fdtomasi.github.io/tag/bioinformatics.html">bioinformatics</a> </p>
-</footer><!-- /.post-info --><p>Another day, another round of fresh and exciting ideas.
-Today it was a bit difficult to follow each talk (remember I did not have a weekend!). To take it easy, I attended the <a href="http://biovis.net/2017/index.html">BioVis</a> track in the morning. I guessed that if they talked about data visualisation, my attention was not required to have high levels. Of course I was wrong.</p>
-<h2>(Biological) data visualisation</h2>
-<p>They went into details a lot, but, as the name of the track suggests, they had nice figures.
-First was time for the keynote by Boudewijn Lelieveld, "Visual analytics for spatial transcriptomics: from single cell to tissue and back". Main topic was: what if Netflix uses <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">PCA</a>? Well, they may suggest <a href="https://en.wikipedia.org/wiki/Jaws_(film)">the Jaws movie</a> to a family. As for the biomedical data, PCA is not that great, ouside, for example, macroscopic differences. Interesting, instead, is that most of the talks were focused on using some variation of <a href="https://distill.pub/2016/misread-tsne/">t-SNE algorithm</a>. And actually it seems to work well in such use cases. In particolar for brain transcriptomics (as explained in this talk, with its hierarchical evolution H-SNE). The topic of brain transcriptomics was investigated also in the following talks, by Marwan Abdellah's "Reconstruction and visualization of large-scale volumetric models of neocortical circuits for physically-plausible in silico optical studies" and Sjoerd M. H. Huisman's "BrainScope: interactive visual exploration of the spatial and temporal human brain transcriptome". The goal is to reconstruct the brain network with watertight meshes to have realistic simulations of what happens inside the brain.</p>
-<p>Here there is a collection of some photos of the BioVis track.
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Here’s a great collection of photos from <a href="https://twitter.com/hashtag/biovis?src=hash">#biovis</a> at <a href="https://twitter.com/hashtag/ismbeccb?src=hash">#ismbeccb</a> 2017 in Prague by <a href="https://twitter.com/jandot">@jandot</a>: <a href="https://t.co/hcLJQNG6fc">https://t.co/hcLJQNG6fc</a>. Impressive attendance!</p>&mdash; Nils Gehlenborg (@nils_gehlenborg) <a href="https://twitter.com/nils_gehlenborg/status/895299653247303680">August 9, 2017</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
-<h2>Deep networks with string data</h2>
-<p>After that, the last talks of the morning were a bit difficult to follow, so let's get straight to the afternoon.
-In the afternoon, I switched to the <a href="http://hitseq.org/">HiTSeq</a>. The website of course is not as nice as the BioVis' one, but the arguments were equally interesting, maybe a little bit more machine learning oriented. Interesting was Xu Min talk about "Chromatin accessibility prediction via convolutional long short-term memory networks with k-mer embedding". <a href="https://en.wikipedia.org/wiki/Deep_learning">Deep networks</a>! I hadn't seen any up to now. Such networks were used with a string embedding, in particular after extracting $k$-mers from the words. This is similar to the string kernel methods, but with the difference that, well, this is not a kernel. And you can use it with <a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">LSTM</a> supervised learning. As for the implementations, it is possible to use it in <a href="https://keras.io/">Keras</a>, <a href="http://deeplearning.net/software/theano/">Theano</a>. So basically the learning is done in two steps.</p>
-<ol>
-<li>unsupervised training of $k$-mer embedding;</li>
-<li>supervised learning with LSTM.</li>
-</ol>
-<p>During all the talk I had the suspect that he had been reading all the time. Nevertheless, it was a nice example of usage of deep networks with string data. <a href="https://academic.oup.com/bioinformatics/article/33/14/i92/3953949/Chromatin-accessibility-prediction-via">Read more here</a>.</p>
-<p>Unfortunately, the weather was very bad, and I did not have time to take any photos anyway. Bad day.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/pages/bio.html">BIO</a></li>
+                        <li><a href="/pages/talks.html">TALKS</a></li>
+                        <li><a href="/pages/research.html">RESEARCH</a></li>
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="fdtomasi.github.io/ismb-eccb-2017-day-2.html" rel="bookmark"
-                           title="Permalink to ISMB/ECCB 2017 conference, Day 2">ISMB/ECCB 2017 conference, Day 2</a></h1>
-                </header>
+                                <li class="active"><a href="https://fdtomasi.github.io/category/posts.html">posts</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2017-07-23T23:15:00+01:00">
-                Published: Sun 23 July 2017
-        </abbr>
+    <!-- Page Header -->
+        <header class="intro-header" style="background-image: url('https://fdtomasi.github.io/theme/images/home-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Articles in the posts category</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="fdtomasi.github.io/author/federico-tomasi.html">Federico Tomasi</a>
-        </address>
-<p>In <a href="fdtomasi.github.io/category/posts.html">posts</a>.</p>
-<p>tags: <a href="fdtomasi.github.io/tag/conference.html">conference</a> <a href="fdtomasi.github.io/tag/life-sciences.html">life sciences</a> <a href="fdtomasi.github.io/tag/bioinformatics.html">bioinformatics</a> </p>
-</footer><!-- /.post-info -->                <h2>10am, Sunday.</h2>
-<p>Organising a conference during a weekend is terrible. One loses his sense of time (and space?). It's Sunday, nonetheless I feel like it's only Tuesday, with the difference that I did not have time to rest this week. At least there is coffee, right?
-(Yes there is! In …</p>
-                <a class="readmore" href="fdtomasi.github.io/ismb-eccb-2017-day-2.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-preview">
+            <a href="https://fdtomasi.github.io/ismb-eccb-2017-day-3.html" rel="bookmark" title="Permalink to ISMB/ECCB 2017 conference, Day 3">
+                <h2 class="post-title">
+                    ISMB/ECCB 2017 conference, Day 3
+                </h2>
+            </a>
+                <p class="article-summary">
+                    The third day at the conference. BioVis and HiTSeq!
+                </p>
+            <p class="post-meta">Posted by
+                    <a href="https://fdtomasi.github.io/author/federico-tomasi.html">Federico Tomasi</a>
+                 on Mon 24 July 2017
+            </p>
+<p>There are <a data-disqus-identifier="ismb-eccb-2017-day-3.html" href="https://fdtomasi.github.io/ismb-eccb-2017-day-3.html#disqus_thread">comments</a>.</p>        </div>
+        <div class="post-preview">
+            <a href="https://fdtomasi.github.io/ismb-eccb-2017-day-2.html" rel="bookmark" title="Permalink to ISMB/ECCB 2017 conference, Day 2">
+                <h2 class="post-title">
+                    ISMB/ECCB 2017 conference, Day 2
+                </h2>
+            </a>
+                <p class="article-summary">
+                    10am, Sunday. Organising a conference during a weekend is terrible. One loses his sense of time (and space?). It's Sunday, nonetheless I...
+                </p>
+            <p class="post-meta">Posted by
+                    <a href="https://fdtomasi.github.io/author/federico-tomasi.html">Federico Tomasi</a>
+                 on Sun 23 July 2017
+            </p>
+<p>There are <a data-disqus-identifier="ismb-eccb-2017-day-2.html" href="https://fdtomasi.github.io/ismb-eccb-2017-day-2.html#disqus_thread">comments</a>.</p>        </div>
+        <div class="post-preview">
+            <a href="https://fdtomasi.github.io/ismb-eccb-2017-day-1.html" rel="bookmark" title="Permalink to ISMB/ECCB 2017 conference, Day 1">
+                <h2 class="post-title">
+                    ISMB/ECCB 2017 conference, Day 1
+                </h2>
+            </a>
+                <p class="article-summary">
+                    Here we are! This year I got the chance to be at the ISMB/ECCB conference, and, wow, this conference is HUGE. There are a lot of great...
+                </p>
+            <p class="post-meta">Posted by
+                    <a href="https://fdtomasi.github.io/author/federico-tomasi.html">Federico Tomasi</a>
+                 on Sat 22 July 2017
+            </p>
+<p>There are <a data-disqus-identifier="ismb-eccb-2017-day-1.html" href="https://fdtomasi.github.io/ismb-eccb-2017-day-1.html#disqus_thread">comments</a>.</p>        </div>
+        <div class="post-preview">
+            <a href="https://fdtomasi.github.io/mlss-cadiz.html" rel="bookmark" title="Permalink to MLSS Cadiz">
+                <h2 class="post-title">
+                    MLSS Cadiz
+                </h2>
+            </a>
+                
+        <blockquote class="instagram-media" data-instgrm-version="7" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/BF_YwWHJ-XZ/" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Una foto pubblicata da Fede Klsw T. (@klsw_)</a> in data: <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2016-05-29T12:01:41+00:00">29 Mag 2016 alle ore 05:01 PDT</time></p></div></blockquote>
+<script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
+    
+            <p class="post-meta">Posted by
+                    <a href="https://fdtomasi.github.io/author/federico-tomasi.html">Federico Tomasi</a>
+                 on Wed 11 May 2016
+            </p>
+<p>There are <a data-disqus-identifier="mlss-cadiz.html" href="https://fdtomasi.github.io/mlss-cadiz.html#disqus_thread">comments</a>.</p>        </div>
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="fdtomasi.github.io/ismb-eccb-2017-day-1.html" rel="bookmark"
-                           title="Permalink to ISMB/ECCB 2017 conference, Day 1">ISMB/ECCB 2017 conference, Day 1</a></h1>
-                </header>
+            </div>
+        </div>
+    </div>
 
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2017-07-22T23:15:00+01:00">
-                Published: Sat 22 July 2017
-        </abbr>
+    <hr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="fdtomasi.github.io/author/federico-tomasi.html">Federico Tomasi</a>
-        </address>
-<p>In <a href="fdtomasi.github.io/category/posts.html">posts</a>.</p>
-<p>tags: <a href="fdtomasi.github.io/tag/conference.html">conference</a> <a href="fdtomasi.github.io/tag/life-sciences.html">life sciences</a> <a href="fdtomasi.github.io/tag/bioinformatics.html">bioinformatics</a> </p>
-</footer><!-- /.post-info -->                <p>Here we are! This year I got the chance to be at the ISMB/ECCB conference, and, <em>wow</em>, this conference is HUGE. There are a lot of great speakers, a lot of great tracks! Unfortunately, I would need a <a href="https://en.wikipedia.org/wiki/Magical_objects_in_Harry_Potter#Time-Turners">Time-Turner</a> to attend them all.</p>
-<p>So, as everyone does, I decided …</p>
-                <a class="readmore" href="fdtomasi.github.io/ismb-eccb-2017-day-1.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                            <li>
+                                <a href="https://www.facebook.com/fede.tomatoma">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/kslw_">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/klsw_/">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/channel/UCcRYAdfZQ_jj-Q9yirpbbbQ">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/fdtomasi">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
+<p class="copyright text-muted">
+  <!--  Blog powered by <a href="http://getpelican.com">Pelican</a>,
+    which takes great advantage of <a href="http://python.org">Python</a>.-->
+    <em>federico [dot] tomasi [at] dibris [dot] unige [dot] it</em><br />
+    <a class="fa fa-map-marker" href="https://www.google.it/maps/place/Via+Dodecaneso,+35,+16146+Genova/@44.403165,8.9696801,17z/data=!3m1!4b1!4m5!3m4!1s0x12d3430b2216399f:0xe215417b3e571fb4!8m2!3d44.403165!4d8.9718688"> <em>Via Dodecaneso 35</em> </a> |
+					<i href="#" class="fa fa-phone">   +39 010 353 6717</i><br /><br />
+          <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+    Content
+  licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, except where indicated otherwise.
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="fdtomasi.github.io/mlss-cadiz.html" rel="bookmark"
-                           title="Permalink to MLSS Cadiz">MLSS Cadiz</a></h1>
-                </header>
+</p>                </div>
+            </div>
+        </div>
+    </footer>
 
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-05-11T22:28:00+01:00">
-                Published: Wed 11 May 2016
-        </abbr>
-		<br />
-        <abbr class="modified" title="2017-02-11T20:14:00+00:00">
-                Updated: Sat 11 February 2017
-        </abbr>
+    <!-- jQuery -->
+    <script src="https://fdtomasi.github.io/theme/js/jquery.min.js"></script>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="fdtomasi.github.io/author/federico-tomasi.html">Federico Tomasi</a>
-        </address>
-<p>In <a href="fdtomasi.github.io/category/posts.html">posts</a>.</p>
-<p>tags: <a href="fdtomasi.github.io/tag/photo.html">photo</a> <a href="fdtomasi.github.io/tag/mlss.html">mlss</a> <a href="fdtomasi.github.io/tag/cadiz.html">cadiz</a> </p>
-</footer><!-- /.post-info -->                Cadiz MLSS
-                <a class="readmore" href="fdtomasi.github.io/mlss-cadiz.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://getpelican.com/">Pelican</a></li>
-                            <li><a href="https://www.python.org/">Python.org</a></li>
-                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="fdtomasi.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://fdtomasi.github.io/theme/js/bootstrap.min.js"></script>
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+        <!-- Custom Theme JavaScript -->
+        <script src="https://fdtomasi.github.io/theme/js/clean-blog.min.js"></script>
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
+    ga('create', 'UA-103577232-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+    var disqus_shortname = 'fdtomasi-github';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+    
+
+
+
+
+
+
 
 </body>
+
 </html>
