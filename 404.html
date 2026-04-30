@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>404 — gone</title>
+    <link rel="icon" href="favicon.ico" />
+    <meta name="description" content="This site no longer exists." />
+    <meta name="robots" content="noindex" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #1a1a1a;
+        --card: #242424;
+        --border: #3a3a3a;
+        --text: #e8e5e0;
+        --muted: #8a857c;
+        --accent: #c9a96e;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        height: 100%;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", system-ui, sans-serif;
+        font-weight: 300;
+        overflow: hidden;
+      }
+
+      body {
+        display: grid;
+        place-items: center;
+        position: relative;
+      }
+
+      canvas#bg {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        opacity: 0.35;
+      }
+
+      main {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        padding: 2rem;
+        max-width: 640px;
+      }
+
+      .label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.75rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 2.5rem;
+        opacity: 0;
+        animation: fade-up 0.9s 0.2s ease-out forwards;
+      }
+
+      .label::before {
+        content: "— ";
+        color: var(--accent);
+      }
+
+      .number {
+        font-family: "Playfair Display", serif;
+        font-weight: 400;
+        font-size: clamp(7rem, 22vw, 14rem);
+        line-height: 1;
+        letter-spacing: -0.04em;
+        position: relative;
+        display: inline-block;
+        color: var(--text);
+        opacity: 0;
+        animation: fade-up 1.1s 0.4s ease-out forwards;
+      }
+
+      /* Glitch — three layered copies that slide in and out */
+      .number::before,
+      .number::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      .number::before {
+        color: #d97a5b;
+        animation: glitch-a 4.2s infinite steps(1, end);
+        mix-blend-mode: screen;
+      }
+
+      .number::after {
+        color: #6e9bc9;
+        animation: glitch-b 4.2s infinite steps(1, end);
+        mix-blend-mode: screen;
+      }
+
+      @keyframes glitch-a {
+        0%, 92%, 100% { transform: translate(0, 0); opacity: 0; }
+        93% { transform: translate(-3px, 1px); opacity: 0.7; }
+        94% { transform: translate(2px, -2px); opacity: 0.5; }
+        95% { transform: translate(-1px, 2px); opacity: 0.7; }
+        96% { transform: translate(0, 0); opacity: 0; }
+      }
+
+      @keyframes glitch-b {
+        0%, 92%, 100% { transform: translate(0, 0); opacity: 0; }
+        93% { transform: translate(2px, -1px); opacity: 0.6; }
+        94% { transform: translate(-2px, 2px); opacity: 0.5; }
+        95% { transform: translate(1px, -2px); opacity: 0.6; }
+        96% { transform: translate(0, 0); opacity: 0; }
+      }
+
+      .title {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: clamp(1.25rem, 3.2vw, 1.75rem);
+        color: var(--text);
+        margin-top: 1.5rem;
+        opacity: 0;
+        animation: fade-up 1s 0.7s ease-out forwards;
+      }
+
+      .subtitle {
+        font-size: 0.95rem;
+        color: var(--muted);
+        margin-top: 1.25rem;
+        line-height: 1.7;
+        opacity: 0;
+        animation: fade-up 1s 0.95s ease-out forwards;
+      }
+
+      .links {
+        margin-top: 2.5rem;
+        display: flex;
+        justify-content: center;
+        gap: 1.75rem;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.8rem;
+        opacity: 0;
+        animation: fade-up 1s 1.2s ease-out forwards;
+      }
+
+      .links a {
+        color: var(--muted);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        padding-bottom: 2px;
+        transition: color 0.25s, border-color 0.25s;
+      }
+
+      .links a:hover {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+      }
+
+      footer {
+        position: fixed;
+        bottom: 1.25rem;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.7rem;
+        color: var(--muted);
+        letter-spacing: 0.15em;
+        opacity: 0;
+        animation: fade-up 1s 1.5s ease-out forwards;
+        z-index: 1;
+      }
+
+      @keyframes fade-up {
+        from { opacity: 0; transform: translateY(8px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      @media (max-width: 600px) {
+        .links { flex-direction: column; gap: 0.75rem; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { animation: none !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="bg"></canvas>
+
+    <main>
+      <div class="label">archived</div>
+      <div class="number" data-text="404">404</div>
+      <div class="title">this page has wandered off</div>
+      <p class="subtitle">
+        The old site is gone. The repo lives on as a marker —
+        nothing here, but the door is left ajar.
+      </p>
+      <div class="links">
+        <a href="https://github.com/fdtomasi" target="_blank" rel="noopener">github</a>
+        <a href="https://scholar.google.com/citations?user=l-RKHcgAAAAJ" target="_blank" rel="noopener">scholar</a>
+      </div>
+    </main>
+
+    <footer>fdtomasi.github.io</footer>
+
+    <script>
+      // Drifting particles — slow, warm, a hint of motion behind the 404.
+      (() => {
+        const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (reduce) return;
+
+        const canvas = document.getElementById("bg");
+        const ctx = canvas.getContext("2d");
+        let w, h, dpr;
+        let particles = [];
+
+        function resize() {
+          dpr = Math.min(window.devicePixelRatio || 1, 2);
+          w = canvas.clientWidth;
+          h = canvas.clientHeight;
+          canvas.width = w * dpr;
+          canvas.height = h * dpr;
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+
+        function init() {
+          const count = Math.min(80, Math.floor((w * h) / 22000));
+          particles = Array.from({ length: count }, () => ({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            r: Math.random() * 1.4 + 0.3,
+            vx: (Math.random() - 0.5) * 0.18,
+            vy: (Math.random() - 0.5) * 0.18,
+            a: Math.random() * 0.5 + 0.2,
+          }));
+        }
+
+        function step() {
+          ctx.clearRect(0, 0, w, h);
+          for (const p of particles) {
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < -10) p.x = w + 10;
+            if (p.x > w + 10) p.x = -10;
+            if (p.y < -10) p.y = h + 10;
+            if (p.y > h + 10) p.y = -10;
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(201, 169, 110, ${p.a})`;
+            ctx.fill();
+          }
+          requestAnimationFrame(step);
+        }
+
+        resize();
+        init();
+        step();
+        window.addEventListener("resize", () => {
+          resize();
+          init();
+        });
+      })();
+    </script>
+  </body>
+</html>
